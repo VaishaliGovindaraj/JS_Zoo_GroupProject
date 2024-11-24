@@ -4,6 +4,4 @@
 // mainContent.textContent = "Hello this is generated via Script";
 // parentDiv.appendChild(mainContent);
 // document.querySelector(".testdiv").style.color = "#fff";
-
 //group_name, lifespan,food,description,length,weight,place
-gggggggilskj\m
