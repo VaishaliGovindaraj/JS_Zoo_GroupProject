@@ -52,7 +52,7 @@ let mammalquokka  = new Animals("Mammals", "Quokka", 10, ["Plant eaters", " shru
     "he Quokka, Setonix brachyurus, was described by early Dutch explorer, Willem de Vlamingh, 'as a kind of rat as big as a common cat'. His first sighting of the Quokka was on an island off the mouth of the Swan River. He named the island Rottenest ('rat nest') in honour of this sighting. The island is now known as Rottnest Island. Essentially the Quokka looks very much like other wallabies.It has short, very coarse and thick grey-brown fur over most of the body with lighter parts underneath. Its facial features consist of a naked nose on a short, broad face with rounded furry ears.The tail is relatively short and mostly devoid of hair. In contrast, the hair on the feet extends to cover its claws.",
     50, 3, "Rottnest Island,few places on mainland Western Australia");
 
-let reptileFrillNeckedLizard = new Animals("Reptiles","Frill Necked Lizard", 20,["small insects", "spiders"], 
+let reptileFrillNeckedLizard = new Animals("Reptiles","Frill-necked lizard", 20,["small insects", "spiders"], 
         "When this unique creature feels threatened, it rises on its hind legs, opens its yellow-coloured mouth, unfurls the colorful, pleated skin flap that encircles its head, and hisses. If an attacker is unintimidated by these antics, the lizard simply turns tail, mouth and frill open, and bolts, legs splaying left and right. It continues its deliberate run without stopping or looking back until it reaches the safety of a tree.",
         90,1,"Northern  Austalia");
    
@@ -100,42 +100,40 @@ function rgbToHex(rgb) {
   }
 
 // JavaScript for highllighting the animal on mouse click / mouse over
-const menuItems = document.querySelectorAll('.animal-item');
+const menuItems = document.querySelectorAll('.dropdown-item');
 menuItems.forEach(item => {
   // Handle click event
     item.addEventListener('click', function (e) {
         active_animal_color = rgbToHex(this.style.backgroundColor);
-        active_animal_name = this.getHTML();
-        console.log(active_animal_name)
+        active_animal_name = this.textContent;
+        //console.log(active_animal_name)
 
         menuItems.forEach(menu => menu.style.backgroundColor = ''); // resets all animals background color
         if(active_animal_color != '#d8611c'){
             this.style.backgroundColor = '#d8611c';  // Set background color on click as orange
 
-            const myDiv = document.getElementById('welcome-container') 
+            const myDiv = document.querySelector('.welcome-container') 
             myDiv.style.display = 'none'; //hide the welcome message 
 
-            document.getElementById('animal-name').textContent  = active_animal_name
+            document.querySelector('.animal-name').textContent  = active_animal_name
             index = findAnimalIndexByName(active_animal_name) //find the clicked animal in the animalArray
 
-            document.getElementById('animal-life-span').textContent  = animalArray[index]['lifeSpan']
-            document.getElementById('animal-food').textContent  = animalArray[index]['food']
-            document.getElementById('animal-description').textContent  = animalArray[index]['description']
-            document.getElementById('animal-length').textContent  = animalArray[index]['length']
-            document.getElementById('animal-weight').textContent  = animalArray[index]['weight']
-            document.getElementById('animal-place').textContent  = animalArray[index]['place']
+            document.querySelector('.animal-life-span').textContent  = animalArray[index]['lifeSpan']
+            document.querySelector('.animal-food').textContent  = animalArray[index]['food']
+            document.querySelector('.animal-description').textContent  = animalArray[index]['description']
+            document.querySelector('.animal-length').textContent  = animalArray[index]['length']
+            document.querySelector('.animal-weight').textContent  = animalArray[index]['weight']
+            document.querySelector('.animal-place').textContent  = animalArray[index]['place']
 
-            const selected_animal = document.getElementById('animal-container')
+            const selected_animal = document.querySelector('.animal-container')
             selected_animal.style.display = 'block'; // show the animal details
             
         }
         else{
             
-            const myDiv = document.getElementById('welcome-container')
-            myDiv.style.display = 'flex'; // show the welcome message on click
+            document.querySelector('.welcome-container').style.display = 'flex'; // show the welcome message on click
 
-            const selected_animal = document.getElementById('animal-container')
-            selected_animal.style.display = 'none'; // hide the animal details
+            document.querySelector('.animal-container').style.display = 'none'; // hide the animal details
 
             this.style.backgroundColor = ''; //remove the highlight color for selected animal
         }     
@@ -149,7 +147,6 @@ menuItems.forEach(item => {
     else{
         this.style.border = '1px solid #fff';  // highlight the selected animal on hover
     }
-    
   });
 
   // Handle mouseout event (reset background color when mouse leaves the item)
