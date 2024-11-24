@@ -3,114 +3,130 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
-@media screen and (min-width: 300px) {
-    html {
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-    }
+html {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
 
-    body {
-        min-height: 100%;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        background-image: url("../images/index/bg_image_bird.jpg");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        height: 100%;
-    }
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../images/index/bg_image_bird.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+}
 
-    .hero-content {
-        background-color: transparent;
-        backdrop-filter: blur(1px);
-    }
+.hero-content {
+    background-color: transparent;
+    backdrop-filter: blur(1px);
+}
 
-    .logo {
-        display: flex;
-        padding: 16px;
-    }
+.logo {
+    display: flex;
+    padding: 16px;
+}
 
-    .header {
-        padding: 16px;
-        display: flex;
-        justify-content: space-around;
-    }
+.header {
+    padding: 16px;
+    display: flex;
+    justify-content: space-around;
+}
 
-    .title {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1rem;
-        color: white;
-        padding: 32px;
-    }
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: white;
+    padding: 32px;
+}
 
-    .nav_menu {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100%;
-    }
+.nav_menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
 
-    .nav_menu a {
-        color: white;
-        font-size: 1rem;
-        text-decoration: none;
-    }
+.nav_menu a {
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+}
 
-    .blur-container {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: antiquewhite;
-        overflow: visible;
-    }
+.blur-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    overflow: visible;
+}
 
-    .blur-container::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 20%;
-        z-index: -1;
-    }
+.blur-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    z-index: -1;
+}
 
+.content {
+    margin: 16px;
+    padding: 16px;
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    display: flex;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+}
+
+.sidebar {
+    flex-basis: 10%;
+    background-color: transparent;
+    color: white;
+    padding: 16px;
+    font-size: 1rem;
+}
+
+.main-content {
+    flex-basis: 90%;
+    color: white;
+    padding: 8px;
+    font-size: 1rem;
+}
+
+.footer {
+    color: white;
+    text-align: center;
+    padding: 48px;
+}
+
+@media screen and (min-width: 600px) {
     .content {
-        margin: 56px;
-        padding: 56px;
-        position: relative;
-        z-index: 1;
-        padding: 20px;
-        display: flex;
-        background-color: transparent;
-        backdrop-filter: blur(5px);
+        margin: 16px;
+        padding: 16px;
     }
 
-    .sidebar {
-        flex-basis: 30%;
-        background-color: transparent;
-        color: white;
-        padding: 32px;
-        font-size: 1.5rem;
+    .sidebar{
+        font-size: 1rem;
+        flex-basis: 10%;
     }
 
-    .main-content {
-        flex-basis: 70%;
-        color: white;
-        padding: 32px;
-        font-size: 1.5rem;
+    .main-content{
+        font-size: 1rem;
+        flex-basis: 90%;
     }
 
-    .footer {
-        color: white;
-        text-align: center;
-        padding: 48px;
-    }
 }
 
 @media screen and (min-width: 768px) {
