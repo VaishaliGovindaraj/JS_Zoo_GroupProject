@@ -28,22 +28,38 @@
     <section class="blur-conatiner">
         <section class="content">
             <section class="sidebar">
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
+                <div class="dropdown_menu">
+                <h2>Zoo Animals</h2>
+                <ul>
+                  <li class="group">
+                    <span class="group-title">Mammals <span class="arrow">▼</span></span>
+                    <ul class="dropdown">
+                      <li class="animal-item">Echidna</li>
+                      <li class="animal-item">Tasmanian Devil</li>
+                      <li class="animal-item">Quokka</li>
+                    </ul>
+                  </li>
+                  <li class="group">
+                    <span class="group-title">Reptiles <span class="arrow">▼</span></span>
+                    <ul class="dropdown">
+                      <li>Frill-necked lizard</li>
+                      <li>Hawksbill Turtle</li>
+                      <li>Perentie </li>
+                    </ul>
+                  </li>
+                  <li class="group">
+                    <span class="group-title">Birds <span class="arrow">▼</span></span>
+                    <ul class="dropdown">
+                      <li>Cassowary</li>
+                      <li>Kookaburra</li>
+                      <li>Yellow Tailed Black Cockatoo</li>
+                    </ul>
+                  </li>
+                </ul>
+            </div>
             </section>
             <section class="main-content">
-                <div class="container">
+                <div class="welcome-container" id="welcome-container">
                     <!-- First Video Container -->
                     <div class="video-container">
                         <video src="./videos/kangarooo.mp4" autoplay muted loop></video>
@@ -59,14 +75,28 @@
                     <div class="video-container">
                         <video src="./videos/17310952-uhd_3840_2160_30fps.mp4" autoplay muted loop></video>
                     </div>
+
+                    <!-- Overlay Welcome Message -->
+                    <div class="overlay">
+                        <h1>Welcome to DJURPARK</h1> 
+                        <div> Explore new Australian animals </div>
+                    </div>
                 </div>
 
-                <!-- Overlay Welcome Message -->
-                <div class="overlay">
-                    <h1>Welcome to DJURPARK</h1> 
-                    <div> Explore new Australian animals </div>
+                <div class="animal-container" id="animal-container">
+                    <h1 id="animal-name"></h1>
+                    <p> Life Span: <span id="animal-life-span"></span> </p>
+                    <p> Food: <span id="animal-food"></span> </p>
+                    <p> Description: <span id="animal-description"></span> </p>
+                    <p> Length: <span id="animal-length"></span> </p>
+                    <p> Weight: <span id="animal-weight"></span> </p>
+                    <p> Place: <span id="animal-place"></span> </p>
+                    
+                    
                 </div>
-            </section>
+
+                
+            </section> 
         </section>
     </section>
     <div class="footer">
