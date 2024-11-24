@@ -165,7 +165,6 @@ body {
     }
 
     @keyframes bg_image_change {
-
         15% {
             background-image: url("../images/index/bg_bird_1.jpg");
 
@@ -191,7 +190,6 @@ body {
 
         }
     }
-
 
     .logo {
         display: flex;
@@ -307,5 +305,4 @@ body {
         text-align: center;
         padding: 48px;
     }
-
 }
