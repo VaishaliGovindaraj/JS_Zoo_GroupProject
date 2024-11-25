@@ -14,11 +14,17 @@ document.querySelectorAll(".nav-link").forEach(n =>
 
 
 const activePage = window.location.pathname;
+console.log(activePage);
+console.log(activePage.length);
+
+if (activePage.length > 1) {
 const navItems = document.querySelectorAll('.nav-link').    
     forEach(item => {
+        
         if(item.href.includes (`${activePage}`)){
             item.classList.add(`active`);
         }
 });
+}
 
 
