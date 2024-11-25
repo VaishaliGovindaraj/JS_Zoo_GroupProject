@@ -12,3 +12,13 @@ document.querySelectorAll(".nav-link").forEach(n =>
         navMenu.classList.remove("active");
     }))
 
+
+const activePage = window.location.pathname;
+const navItems = document.querySelectorAll('.nav-link').    
+    forEach(item => {
+        if(item.href.includes (`${activePage}`)){
+            item.classList.add(`active`);
+        }          
+});
+
+
