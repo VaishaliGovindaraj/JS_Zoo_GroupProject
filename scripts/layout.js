@@ -18,8 +18,7 @@ const navItems = document.querySelectorAll('.nav-link').
     forEach(item => {
         if(item.href.includes (`${activePage}`)){
             item.classList.add(`active`);
-            console.log(`${activePage}`);
-        }          
+        }
 });
 
 
