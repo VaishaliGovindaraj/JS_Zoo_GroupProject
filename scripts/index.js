@@ -22,6 +22,8 @@ groups.forEach(group => {
       dropdown.style.display = 'block';
       arrow.classList.add('expanded');
     }
+    document.querySelector('.welcome-container').style.display = 'flex'; // show the welcome message on click
+    document.querySelector('.animal-container').style.display = 'none'; // hide the animal details
   });
 });
 
