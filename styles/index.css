@@ -78,7 +78,7 @@
 
 /* Styling for the main heading */
 .overlay h1 {
-    font-size: 5rem;
+    font-size: 2rem;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
@@ -86,8 +86,9 @@
 
 /* Styling for the subtitle */
 .overlay div {
-    font-size: 2rem;
+    font-size: 1rem;
     margin-top: 10px; /* Space between the heading and subtitle */
     font-weight: lighter;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
+
