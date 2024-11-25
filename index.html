@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/layout.css">
     <script src="./scripts/index.js" defer></script>
-</head>
+    <script src="./scripts/layout.js" defer></script>
 
+</head>
 <body>
     <div class="hero_content">
         <header class="header">
@@ -16,12 +17,29 @@
                 <img src="./images/index/logo/logo_animals.png" height="100px" width="100px">
                 <h1 class="title">DJURPARK</h1>
             </div>
-            <nav class="nav_menu">
-                <a href="#">Home</a>
-                <a href="#">Reptiles</a>
-                <a href="#">Mammals</a>
-                <a href="#">Reptiles</a>
-                <a href="#">About-Us</a>
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./html/mammals.html" class="nav-link">Mammals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./html/reptiles.html" class="nav-link">Reptiles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./html/birds.html" class="nav-link">Birds</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./html/about-us.html" class="nav-link">About Us</a>
+                    </li>                
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </nav>
         </header>
     </div>
@@ -110,8 +128,29 @@
             </section>
         </section>
     </section>
-    <div class="footer">
-        <p>Copyright 2024</p>
-    </div>
+
+    <footer>
+        <div class="foot-panel1">
+            <a href="#top">Back To Top</a>    
+        </div>
+
+        <div class="foot-panel2">
+            <ul>
+              <p>About-Us</p>
+              <a>+46 8744544235</a>
+              <a>contact@australiandjurpark.com</a>
+            </ul>
+            <ul>
+              <p>follow Us</p>    
+              <a>Facebook</a> 
+              <a>Instagram</a>
+              <a>Twitter</a>                          
+            </ul>
+        </div>
+
+        <div class="copyright">
+            <a>Copyright @2024</a>
+        </div>
+    </footer>
 </body>
 </html>
