@@ -47,58 +47,6 @@ body {
     padding: 32px;
 }
 
-.navbar{
-    min-height: 70px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 24px;
-}
-
-.nav-menu{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    gap:60px;
-}
-
-.nav-menu li{
-    list-style: none;
-}
-
-.nav-menu li a{
-    color: white;
-    font-size: 1.5rem;
-    text-decoration: none;
-}
-
-.nav-link{
-    transition: 0.7s ease;
-}
-
-.nav-link:hover{
-    color: dodgerblue;
-}
-
-.navbar .nav-menu .nav-item .nav-active{
-    color:blue;
-}
-
-.hamburger{
-    display: none;
-    cursor: pointer;
-}
-
-.bar{
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: white;
-}
-
 .blur-container {
     position: relative;
     display: flex;
@@ -345,6 +293,57 @@ body {
       }
 }
 
+.navbar{
+    min-height: 70px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.nav-menu{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:60px;
+}
+
+.nav-menu li{
+    list-style: none;
+}
+
+.nav-menu li a{
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.nav-link{
+    transition: 0.7s ease;
+}
+
+.nav-link:hover{
+    color: dodgerblue;
+}
+
+.navbar .nav-menu .nav-item .nav-active{
+    color:blue;
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
 
 @media screen and (max-width: 768px){
     .hamburger{
