@@ -1,19 +1,19 @@
-*{
+* {
     box-sizing: border-box;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
+    font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
-html{
-    height: 100vh;
-    margin:0;
+html {
+    min-height: 100vh;
+    margin: 0;
     padding: 0;
 }
 
-body{
+body {
     min-height: 100%;
-    margin:0;
+    margin: 0;
     padding: 0;
-    display:flex;
+    display: flex;
     flex-direction: column;
     background-image: url("../images/index/bg_image_bird.jpg");
     background-size: cover;
@@ -22,28 +22,29 @@ body{
     height: 100%;
 }
 
-.hero-content{
+.hero-content {
     background-color: transparent;
     backdrop-filter: blur(1px);
 }
 
 .logo {
-    display:flex;
-    padding:16px;
+    display: flex;
+    padding: 16px;
 }
 
-.header{
+.header {
     padding: 16px;
-    display:flex;
+    display: flex;
     justify-content: space-around;
 }
 
-.title{
-    display:flex;
+.title {
+    display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1rem;
     color: white;
-    padding:32px;
+    padding: 32px;
 }
 
 .navbar{
@@ -104,7 +105,7 @@ body{
     justify-content: center;
     align-items: center;
     background-color: antiquewhite;
-    overflow: visible; 
+    overflow: visible;
 }
 
 .blur-container::before {
@@ -114,88 +115,66 @@ body{
     left: 0;
     width: 100%;
     height: 20%;
-    z-index: -1; 
+    z-index: -1;
 }
 
 .content {
-    margin:56px;
-    padding:56px;
-    position: relative; 
-    z-index: 1; 
-    padding: 20px; 
-    display:flex;
+    margin: 16px;
+    padding: 16px;
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    display: flex;
     background-color: transparent;
     backdrop-filter: blur(5px);
 }
 
-.sidebar{
-    flex-basis: 30%;
+.sidebar {
+    flex-basis: 10%;
     background-color: transparent;
-    color:white;
-    padding:32px;
-    font-size: 1.5rem;
+    color: white;
+    padding: 16px;
+    font-size: 1rem;
 }
 
-.main-content{
-    flex-basis: 70%;
-    color:white;
-    padding:32px;
-    font-size: 1.5rem;
+.main-content {
+    flex-basis: 90%;
+    color: white;
+    padding: 8px;
+    font-size: 1rem;
 }
 
-.footer{
+.footer {
     color: white;
     text-align: center;
     padding: 48px;
 }
 
-@media screen and (max-width: 768px){
-    .hamburger{
-        display:block;
+@media screen and (min-width: 600px) {
+    .content {
+        margin: 16px;
+        padding: 16px;
     }
 
-    .hamburger.active .bar:nth-child(2){
-        opacity: 0;
+    .sidebar{
+        font-size: 1rem;
+        flex-basis: 10%;
     }
 
-    .hamburger.active .bar:nth-child(1){
-        transform: translateY(8px) rotate(45deg);
+    .main-content{
+        font-size: 1rem;
+        flex-basis: 90%;
     }
 
-    .hamburger.active .bar:nth-child(3){
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .nav-menu{
-        position:fixed;
-        left: -100%;
-        top: 120px;
-        gap: 0;
-        flex-direction: column;
-        background-color: black;
-        width:100%;
-        text-align: center;
-        transition: 0.3s;
-    }
-
-    .nav-item{
-        margin: 16px 0;
-    }
-
-    .nav-menu.active{
-        left:0; 
-        z-index: 3;
-    }   
-    
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
 
-    body{
+    body {
         min-height: 100%;
-        margin:0;
+        margin: 0;
         padding: 0;
-        display:flex;
+        display: flex;
         flex-direction: column;
         background-image: url("../images/index/bg_image_bird.jpg");
         background-size: cover;
@@ -204,7 +183,7 @@ body{
         height: 100%;
         animation: bg_image_change 30s linear infinite;
         transition: bg_image_change 1s ease-in-out;
-        opacity:0.85;
+        opacity: 0.85;
     }
 
     body::before {
@@ -214,9 +193,9 @@ body{
         left: 0;
         width: 100%;
         height: 100%;
-        background-image:  url("../images/index/bg_image_bird.jpg"),url("../images/index/bg_bird_1.jpg"), url("../images/index/bg_bird_2.jpg"),
-                          url("../images/index/bg_bird_3.jpg"), url("../images/index/bg_bird_4.jpg"),
-                          url("../images/index/bg_bird_5.jpg");
+        background-image: url("../images/index/bg_image_bird.jpg"), url("../images/index/bg_bird_1.jpg"), url("../images/index/bg_bird_2.jpg"),
+            url("../images/index/bg_bird_3.jpg"), url("../images/index/bg_bird_4.jpg"),
+            url("../images/index/bg_bird_5.jpg");
         background-size: cover;
         background-position: center;
         opacity: 0;
@@ -225,61 +204,60 @@ body{
     }
 
     @keyframes bg_image_change {
-
         15% {
             background-image: url("../images/index/bg_bird_1.jpg");
-            
+
         }
 
         30% {
             background-image: url("../images/index/bg_bird_2.jpg");
-          
+
         }
 
         60% {
             background-image: url("../images/index/bg_bird_3.jpg");
-         
+
         }
 
         80% {
             background-image: url("../images/index/bg_bird_4.jpg");
-            
+
         }
 
         100% {
             background-image: url("../images/index/bg_bird_5.jpg");
-           
+
         }
     }
 
-    .logo{
+    .logo {
         display: flex;
-        padding:16px;
+        padding: 16px;
     }
-    
-    .header{
+
+    .header {
         padding: 8px;
-        display:flex;
+        display: flex;
         justify-content: space-around;
     }
-    
-    .title{
-        display:flex;
+
+    .title {
+        display: flex;
         font-size: 1.5rem;
         justify-content: center;
         align-items: center;
         color: white;
-        padding:8px;
+        padding: 8px;
     }
-    
+
     .blur-container {
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
-        overflow: visible; 
+        overflow: visible;
     }
-    
+
     .blur-container::before {
         content: "";
         position: absolute;
@@ -287,43 +265,43 @@ body{
         left: 0;
         width: 100%;
         height: 20%;
-        z-index: -1; 
-    }
-    
-    .content {
-        margin:16px 56px 16px 56px;
-        padding:56px;
-        position: relative; 
         z-index: -1;
-        padding: 20px; 
-        display:flex;
+    }
+
+    .content {
+        margin: 16px 56px 16px 56px;
+        padding: 56px;
+        position: relative;
+        z-index: 1;
+        padding: 20px;
+        display: flex;
         background-color: transparent;
         backdrop-filter: blur(5px);
     }
-    
-    .sidebar{
+
+    .sidebar {
         flex-basis: 10%;
         background-color: transparent;
-        color:white;
-        padding:16px;
-        font-size: 1rem;
-    }
-    
-    .main-content{
-        flex-basis: 90%;
-        color:white;
-        padding:16px;
+        color: white;
+        padding: 16px;
         font-size: 1rem;
     }
 
-    .main-content p:hover{
+    .main-content {
+        flex-basis: 90%;
+        color: white;
+        padding: 16px;
+        font-size: 1rem;
+    }
+
+    .main-content p:hover {
         padding: 48px;
         margin: 16px;
         background-color: rgb(65, 65, 64);
         transform: scale(1.25);
         font-size: 0.75rem;
-        width:60%;
-        height:auto;
+        width: 60%;
+        height: auto;
     }
 
     /*footer panels and copyright*/
@@ -366,3 +344,46 @@ body{
         align-items: center;
       }
 }
+
+
+@media screen and (max-width: 768px){
+    .hamburger{
+        display:block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu{
+        position:fixed;
+        left: -100%;
+        top: 120px;
+        gap: 0;
+        flex-direction: column;
+        background-color: black;
+        width:100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .nav-item{
+        margin: 16px 0;
+    }
+
+    .nav-menu.active{
+        left:0; 
+        z-index: 3;
+    }   
+    
+}
+
+
