@@ -25,6 +25,7 @@ body {
 .hero-content {
     background-color: transparent;
     backdrop-filter: blur(1px);
+    margin-left: 250px; /* Ensure header content aligns after the sidebar */
 }
 
 .logo {
@@ -75,21 +76,25 @@ body {
     display: flex;
     background-color: transparent;
     backdrop-filter: blur(5px);
+
 }
 
 .sidebar {
     flex-basis: 10%;
     background-color: transparent;
-    color: white;
-    padding: 16px;
-    font-size: 1rem;
+    color:white;
+    padding:32px;
+    font-size: 1.5rem;
+    display: flex;
+
 }
 
-.main-content {
-    flex-basis: 90%;
-    color: white;
-    padding: 8px;
-    font-size: 1rem;
+.main-content{
+    flex-basis: 70%;
+    color:white;
+    padding:32px;
+    font-size: 1.5rem;
+    display: flex;
 }
 
 .footer {
