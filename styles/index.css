@@ -5,14 +5,10 @@
 .welcome_image {
     width: 90%;
     height: auto;
-    transition: transform 0.5s ease, box-shadow 0.5s ease; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
     border-radius: 50px;
     padding: 16px;
-}
-
-.welcome_image:hover {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
+    margin-bottom: 8px;
 }
 
 .imageContainer{
@@ -27,7 +23,7 @@
 .paraTitle{
     font-size: 1.5rem;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     padding: 16px;
 }
 
@@ -46,6 +42,20 @@
         place-items: center; 
         padding: 20px; 
     }
+
+    .welcome_image {
+        width: 90%;
+        height: auto;
+        transition: transform 0.5s ease, box-shadow 0.5s ease; 
+        border-radius: 50px;
+        padding: 16px;
+    }
+    
+    .welcome_image:hover {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
+    }
+
 
     .paraTitle{
         font-size: 2rem;
