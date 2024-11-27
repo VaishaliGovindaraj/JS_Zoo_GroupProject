@@ -55,7 +55,7 @@ body{
 
 .nav_menu a{
     color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .blur-container {
@@ -78,11 +78,10 @@ body{
 }
 
 .content {
-    margin:8px;
+    margin:0;
     padding:8px;
     position: relative; 
     z-index: 1; 
-    padding: 20px; 
     display:flex;
     background-color: transparent;
     backdrop-filter: blur(5px);
@@ -93,7 +92,7 @@ body{
     background-color: transparent;
     color:white;
     padding:8px;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .main-content{
@@ -172,7 +171,6 @@ body{
         }
     }
 
-
     .logo{
         display: flex;
         padding:16px;
@@ -202,7 +200,7 @@ body{
     
     .nav_menu a{
         color: white;
-        font-size: 1rem;
+        font-size: 1.5rem;
         text-decoration: none;
         font-weight: bold;
         position: relative;
