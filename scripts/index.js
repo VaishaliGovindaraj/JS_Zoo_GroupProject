@@ -29,10 +29,10 @@ let exploreZoo = new InfoText(
 let closeEncounters = new InfoText(
     "Close Encounter",
     [
-        "images/index/welcome_page/close_encounters/capybara.png",
-        "images/index/welcome_page/close_encounters/meerkat.png",
-        "images/index/welcome_page/close_encounters/redpanda.png",
-        "images/index/welcome_page/close_encounters/snowleopard.png"
+        "images/index/welcome_page/close_encounters/bird_1.jpg",
+        "images/index/welcome_page/close_encounters/bird_2.jpg",
+        "images/index/welcome_page/close_encounters/bird_3.jpg",
+        "images/index/welcome_page/close_encounters/reptile_1.jpg"
     ],
     "Experience the thrill of getting up close and personal with some of the world’s most fascinating animals through our exclusive Close Encounter programs! At Te Nukuao Wellington Zoo, we provide a unique opportunity for visitors to meet and interact with a variety of creatures in a safe and controlled environment. Imagine hand-feeding giraffes, walking alongside curious meerkats, or even spending time with majestic big cats under the guidance of our expert keepers. These encounters are designed to deepen your connection with wildlife and foster a greater appreciation for conservation efforts."
 );
