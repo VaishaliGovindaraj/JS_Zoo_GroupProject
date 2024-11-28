@@ -84,7 +84,7 @@ body {
     background-color: transparent;
     color:white;
     padding:32px;
-    font-size: 1.5rem;
+  /*  font-size: 1.5rem;*/
     display: flex;
 
 }
@@ -247,7 +247,7 @@ body {
         font-size: 1rem;
     }
 
-    .main-content p:hover {
+    /*.main-content p:hover {
         padding: 48px;
         margin: 16px;
         background-color: rgb(65, 65, 64);
@@ -255,7 +255,7 @@ body {
         font-size: 0.75rem;
         width: 60%;
         height: auto;
-    }
+    }*/
 
     /*footer panels and copyright*/
     footer{
@@ -387,6 +387,17 @@ body {
         left:0; 
         z-index: 3;
     }   
+    .main-content{
+
+        color:white;
+        padding:32px;
+        font-size: 1.5rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    
+    }
+    
     
 }
 

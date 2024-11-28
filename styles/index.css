@@ -80,6 +80,25 @@
     z-index: 1; /* Ensure slanted videos sit above the background */
     border: 1px solid #ffffff; /* Add a solid white border */
     display: none;
+    background-color: #10160f;
+    padding: 30px;
+    
+}
+
+/* animal details images*/
+.animal-container img{
+  height: 200px;
+  width: 200px;
+}
+
+/* animal details links*/
+.animal-container a{
+  color: antiquewhite;
+}
+
+/* animal details links*/
+.animal-container a:hover{
+  color: rgb(241, 161, 55);
 }
 
 /* Base styling for video containers */
@@ -165,3 +184,131 @@
     font-weight: lighter;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
+/* General styles for larger screens (default) */
+/* Already included in your CSS */
+
+/* Medium screens (tablets, 768px and below) */
+@media (max-width: 768px) {
+  /* Sidebar occupies the first row */
+  .sidebar {
+    width: 100%; /* Full width for the sidebar */
+    height: auto; /* Adjust height dynamically */
+    position: relative; /* Ensure it stacks correctly */
+    font-size: 1.5rem;
+  }
+
+  .sidebar h2{
+    font-size: 1.5rem;
+  }
+
+.content{
+  display: flex;
+  flex-direction: column;
+}
+
+ .main-content{
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+}
+
+  /* Welcome container (video section) moves below */
+  .welcome-container {
+    margin-left: -10px;
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 1; /* Ensure slanted videos sit above the background */
+    border: 1px solid #ffffff; /* Add a solid white border */
+  }
+  .animal-container {
+    margin-left: -10px;
+    font-size: 1rem;
+    
+  }
+
+  /* Individual video containers */
+  .video-container {
+    width: 100%; /* Each video container spans full width */
+    height: auto; /* Allow videos to resize dynamically */
+    position: relative; /* Ensure no overlap with other elements */
+    z-index: 1; /* Ensure correct stacking below sidebar */
+  }
+
+  .video-container video {
+    width: 100%; /* Ensure video fits its container */
+    height: 100%; /* Maintain aspect ratio */
+  }
+  .overlay h1 {
+    font-size: 2rem; /* Reduce heading size */
+  }
+
+  .overlay div {
+    font-size: 1.5rem; /* Reduce subtitle size */
+  }
+
+}
+
+
+
+@media (max-width: 480px) {
+  /* Sidebar occupies the first row */
+  .sidebar {
+    width: 100%; /* Full width for the sidebar */
+    height: auto; /* Adjust height dynamically */
+    position: relative; /* Ensure it stacks correctly */
+    font-size: 1rem;
+  }
+
+.content{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+ .main-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.animal-container {
+  font-size: 1rem;
+  
+}
+  /* Welcome container (video section) moves below */
+  .welcome-container {
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 1; /* Ensure slanted videos sit above the background */
+    border: 1px solid #ffffff; /* Add a solid white border */
+  }
+
+  /* Individual video containers */
+  .video-container {
+    width: 100%; /* Each video container spans full width */
+    height: auto; /* Allow videos to resize dynamically */
+    position: relative; /* Ensure no overlap with other elements */
+    z-index: 1; /* Ensure correct stacking below sidebar */
+  }
+
+  .video-container video {
+    width: 100%; /* Ensure video fits its container */
+    height: 100%; /* Maintain aspect ratio */
+  }
+  .overlay h1 {
+    font-size: 1.5rem; /* Reduce heading size */
+  }
+
+  .overlay div {
+    font-size: 1rem; /* Reduce subtitle size */
+  }
+
+}
+
