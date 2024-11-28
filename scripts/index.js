@@ -13,7 +13,7 @@ let planYourDay = new InfoText(
         "images/index/welcome_page/plan_your_day/zoo_visit_3.jpg",
         "images/index/welcome_page/plan_your_day/zoo_visit_4.jpg"
     ],
-    "Djurpark is open from 9:30-5 pm, all year except Christmas Day.Child entry is for 3-14 year olds. Free entry for children younger than 3 years old.Under 14s need to have an adult with them.Please bring your ID, as we offer discounts to students, Community Services card holders, and Gold Card holders.Caregivers of disabled persons are given complimentary entry to the Zoo upon presentation of suitable supporting documentation or identification.Please note that Te Nukuao Wellington Zoo does not have luggage storage facilities i.e. lockers.  If you have large bags, please chat with one of our Visitor Advisors, who may be able to store them in the front office during your visit.");
+    "SafariPark is open from 9:30-5 pm, all year except Christmas Day.Child entry is for 3-14 year olds. Free entry for children younger than 3 years old.Under 14s need to have an adult with them.Please bring your ID, as we offer discounts to students, Community Services card holders, and Gold Card holders.Caregivers of disabled persons are given complimentary entry to the Zoo upon presentation of suitable supporting documentation or identification.Please note that Te Nukuao Wellington Zoo does not have luggage storage facilities i.e. lockers.  If you have large bags, please chat with one of our Visitor Advisors, who may be able to store them in the front office during your visit.");
 
 let exploreZoo = new InfoText(
     "Explore the zoo",
@@ -34,7 +34,7 @@ let closeEncounters = new InfoText(
         "images/index/welcome_page/close_encounters/bird_3.jpg",
         "images/index/welcome_page/close_encounters/reptile_1.jpg"
     ],
-    "Experience the thrill of getting up close and personal with some of the world’s most fascinating animals through our exclusive Close Encounter programs! At Djurpark, we provide a unique opportunity for visitors to meet and interact with a variety of creatures in a safe and controlled environment. Imagine hand-feeding giraffes, walking alongside curious meerkats, or even spending time with majestic big cats under the guidance of our expert keepers. These encounters are designed to deepen your connection with wildlife and foster a greater appreciation for conservation efforts."
+    "Experience the thrill of getting up close and personal with some of the world’s most fascinating animals through our exclusive Close Encounter programs! At SafariPark, we provide a unique opportunity for visitors to meet and interact with a variety of creatures in a safe and controlled environment. Imagine hand-feeding giraffes, walking alongside curious meerkats, or even spending time with majestic big cats under the guidance of our expert keepers. These encounters are designed to deepen your connection with wildlife and foster a greater appreciation for conservation efforts."
 );
 
 let holidayProgramme  = new InfoText(
