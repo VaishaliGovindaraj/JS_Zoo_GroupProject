@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/layout.css">
     <script src="./scripts/index.js" defer></script>
-</head>
+    <script src="./scripts/layout.js" defer></script>
 
+</head>
 <body>
+
     <nav class="nav_menu">
         <a href="./index.html">Home</a>
         <a href="./html/reptiles.html">Reptiles</a>
@@ -18,34 +20,145 @@
         <a href="./html/reptiles.html">Reptiles</a>
         <a href="./html/about-us.html">About-Us</a>
     </nav>
+
+    <div class="hero_content">
+        <header class="header">
+            <div class="logo">
+                <img src="./images/index/logo/logo_animals.png" height="100px" width="100px">
+                <h1 class="title">DJURPARK</h1>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./html/mammals.html" class="nav-link">Mammals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./html/reptiles.html" class="nav-link">Reptiles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./html/birds.html" class="nav-link">Birds</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./html/about-us.html" class="nav-link">About Us</a>
+                    </li>                
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </header>
+    </div>
+
     <section class="blur-conatiner">
         <section class="content">
             <section class="sidebar">
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
-                <p>Kangaroo</p>
+                <div class="dropdown_menu">
+                <h2>Zoo Animals</h2>
+                <ul>
+                  <li class="group">
+                    <span class="group-title">Mammals <span class="arrow">▼</span></span>
+                    <ul class="dropdown">
+                      <li class="dropdown-item">Echidna</li>
+                      <li class="dropdown-item">Tasmanian Devil</li>
+                      <li class="dropdown-item">Quokka</li>
+                    </ul>
+                  </li>
+                  <li class="group">
+                    <span class="group-title">Reptiles <span class="arrow">▼</span></span>
+                    <ul class="dropdown">
+                      <li class="dropdown-item">Frill-necked lizard</li>
+                      <li class="dropdown-item">Hawksbill Turtle</li>
+                      <li class="dropdown-item">Perentie</li>
+                    </ul>
+                  </li>
+                  <li class="group">
+                    <span class="group-title">Birds <span class="arrow">▼</span></span>
+                    <ul class="dropdown">
+                      <li class="dropdown-item">Cassowary</li>
+                      <li class="dropdown-item">Kookaburra</li>
+                      <li class="dropdown-item">Yellow Tailed Black Cockatoo</li>
+                    </ul>
+                  </li>
+                </ul>
+            </div>
             </section>
             <section class="main-content">
 
-                <div class="welcome_content">
+                <div class="welcome-container" id="welcome-container">
+                    <!-- First Video Container -->
+                    <div class="video-container">
+                        <video src="./videos/kangarooo.mp4" autoplay muted loop></video>
+                    </div>
 
+                    <!-- Second Video Container -->
+                    <div class="video-container">
+                        
+                        <video src="./videos/233037_small.mp4" autoplay muted loop></video>
+                    </div>
+
+                    <!-- Third Video Container -->
+                    <div class="video-container">
+                        <video src="./videos/17310952-uhd_3840_2160_30fps.mp4" autoplay muted loop></video>
+                    </div>
+
+                    <!-- Overlay Welcome Message -->
+                    <div class="overlay">
+                        <h1>Welcome to DJURPARK</h1> 
+                        <div> Explore new Australian animals </div>
+                    </div>
+
+                    
+                    <div class="welcome_content">
+
+                    </div>
                 </div>
-            </section>
+
+                <div class="animal-container" id="animal-container">
+                    <h1 class="animal-name"></h1>
+                    <p> Life Span: <span class="animal-life-span"></span> </p>
+                    <p> Food: <span class="animal-food"></span> </p>
+                    <p> Description: <span class="animal-description"></span> </p>
+                    <p> Length: <span class="animal-length"></span> </p>
+                    <p> Weight: <span class="animal-weight"></span> </p>
+                    <p> Place: <span class="animal-place"></span> </p>
+                    
+                    
+                </div>
+
+                
+            </section> 
+
         </section>
     </section>
-    <div class="footer">
-        <p>Copyright 2024</p>
-    </div>
+
+    <footer>
+        <div class="foot-panel1">
+            <a href="#top">Back To Top</a>    
+        </div>
+
+        <div class="foot-panel2">
+            <ul>
+              <p>About-Us</p>
+              <a>+46 8744544235</a>
+              <a>contact@australiandjurpark.com</a>
+            </ul>
+            <ul>
+              <p>follow Us</p>    
+              <a>Facebook</a> 
+              <a>Instagram</a>
+              <a>Twitter</a>                          
+            </ul>
+        </div>
+
+        <div class="copyright">
+            <a>Copyright @2024</a>
+        </div>
+    </footer>
 </body>
 
 </html>
