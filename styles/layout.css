@@ -106,9 +106,33 @@ body {
 }
 
 .footer {
-    color: white;
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    padding: 48px;
+    color: white;
+    gap: 24px;
+    padding: 24px;
+}
+
+.footer-logo h2 {
+    font-size: 2.6rem;
+}
+
+.footer-contact h4 {
+    font-size: 1.4rem;
+}
+
+.footer-contact p {
+    font-size: 1rem;
+}
+
+.footer_social-media h4 {
+    font-size: 1.4rem;
+}
+
+.footer-logo img {
+    width: 200px; 
+    height: auto; 
 }
 
 @media screen and (min-width: 600px) {
@@ -300,9 +324,5 @@ body {
         height: auto;
     }
 
-    .footer {
-        color: white;
-        text-align: center;
-        padding: 48px;
-    }
 }
+
