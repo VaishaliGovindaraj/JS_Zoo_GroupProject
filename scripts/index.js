@@ -60,7 +60,7 @@ let mammalTasmanianDevil  = new Animals("Mammals", "Tasmanian Devil", 5, ["A pre
 
 
 let mammalquokka  = new Animals("Mammals", "Quokka", 10, ["Plant eaters", " shrubs", "grasses"],
-    "he Quokka, Setonix brachyurus, was described by early Dutch explorer, Willem de Vlamingh, 'as a kind of rat as big as a common cat'. His first sighting of the Quokka was on an island off the mouth of the Swan River. He named the island Rottenest ('rat nest') in honour of this sighting. The island is now known as Rottnest Island. Essentially the Quokka looks very much like other wallabies.It has short, very coarse and thick grey-brown fur over most of the body with lighter parts underneath. Its facial features consist of a naked nose on a short, broad face with rounded furry ears.The tail is relatively short and mostly devoid of hair. In contrast, the hair on the feet extends to cover its claws.",
+    "The Quokka, Setonix brachyurus, was described by early Dutch explorer, Willem de Vlamingh, 'as a kind of rat as big as a common cat'. His first sighting of the Quokka was on an island off the mouth of the Swan River. He named the island Rottenest ('rat nest') in honour of this sighting. The island is now known as Rottnest Island. Essentially the Quokka looks very much like other wallabies.It has short, very coarse and thick grey-brown fur over most of the body with lighter parts underneath. Its facial features consist of a naked nose on a short, broad face with rounded furry ears.The tail is relatively short and mostly devoid of hair. In contrast, the hair on the feet extends to cover its claws.",
     50, 3, "Rottnest Island,few places on mainland Western Australia",  "./images/quokka.jpg", 'Mammals', './html/Mammals.html');
 
 let reptileFrillNeckedLizard = new Animals("Reptiles","Frill-necked lizard", 20,["small insects", "spiders"], 
@@ -139,7 +139,10 @@ menuItems.forEach(item => {
             document.querySelector('.animal-group').textContent  = animalArray[index]['group']
             document.querySelector('.animal-group-link').href  = animalArray[index]['groupLink']
             selected_animal.style.display = 'block'; // show the animal details
-            
+            if (window.innerWidth <= 768) {
+              selected_animal.focus();
+              selected_animal.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         }
         else{
           if (window.innerWidth <= 768) {

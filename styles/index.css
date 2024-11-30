@@ -227,6 +227,7 @@
   .animal-container {
     margin-left: -10px;
     font-size: 1rem;
+    overflow-y: scroll;
     
   }
 
@@ -277,8 +278,7 @@
 }
 
 .animal-container {
-  font-size: 1rem;
-  
+  font-size: 1rem; 
 }
   /* Welcome container (video section) moves below */
   .welcome-container {
