@@ -97,12 +97,6 @@ body {
     display: flex;
 }
 
-.footer {
-    color: white;
-    text-align: center;
-    padding: 48px;
-}
-
 @media screen and (min-width: 600px) {
     .content {
         margin: 16px;
@@ -399,5 +393,6 @@ body {
     }
     
     
+
 }
 
