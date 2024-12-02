@@ -4,7 +4,7 @@
 }
 
 html{
-    height: 100vh;
+    min-height: 100vh;
     margin:0;
     padding: 0;
 }
@@ -15,7 +15,7 @@ body{
     padding: 0;
     display:flex;
     flex-direction: column;
-    background-image: url("../images/bg_image_bird.jpg");
+    background-image: url("../images/index/bg_image_bird.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -29,11 +29,11 @@ body{
 
 .logo{
     display: flex;
-    padding:16px;
+    padding:0;
 }
 
 .header{
-    padding: 16px;
+    padding: 8px;
     display:flex;
     justify-content: space-around;
 }
@@ -42,8 +42,9 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.5rem;
     color: white;
-    padding:32px;
+    padding:8px;
 }
 
 .nav_menu{
@@ -55,7 +56,8 @@ body{
 
 .nav_menu a{
     color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    text-decoration: none;
 }
 
 .blur-container {
@@ -63,7 +65,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: antiquewhite;
     overflow: visible; 
 }
 
@@ -89,18 +90,18 @@ body{
 }
 
 .sidebar{
-    flex-basis: 30%;
+    flex-basis: 10%;
     background-color: transparent;
     color:white;
-    padding:32px;
-    font-size: 1.5rem;
+    padding:16px;
+    font-size: 1.25rem;
 }
 
 .main-content{
-    flex-basis: 70%;
+    flex-basis: 90%;
     color:white;
-    padding:32px;
-    font-size: 1.5rem;
+    padding:8px;
+    font-size: 1.25rem;
 }
 
 .footer{
@@ -108,6 +109,7 @@ body{
     text-align: center;
     padding: 48px;
 }
+
 
 @media screen and (min-width: 768px){
 
@@ -272,16 +274,6 @@ body{
         font-size: 1rem;
     }
 
-    .main-content p:hover{
-        padding: 48px;
-        margin: 16px;
-        background-color: rgb(65, 65, 64);
-        transform: scale(1.25);
-        font-size: 0.75rem;
-        width:60%;
-        height:auto;
-    }
-    
     .footer{
         color: white;
         text-align: center;
