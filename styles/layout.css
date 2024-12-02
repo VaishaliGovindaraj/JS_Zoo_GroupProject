@@ -89,12 +89,43 @@ body {
 
 }
 
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    gap: 24px;
+    padding: 24px;
+}
+
+.footer-logo h2 {
+    font-size: 2.6rem;
+}
+
+.footer-contact h4 {
+    font-size: 1.4rem;
+}
+
+.footer-contact p {
+    font-size: 1rem;
+}
+
+.footer_social-media h4 {
+    font-size: 1.4rem;
+}
+
+.footer-logo img {
+    width: 200px; 
+    height: auto; 
+
 .main-content{
     flex-basis: 70%;
     color:white;
     padding:32px;
     font-size: 1.5rem;
     display: flex;
+
 }
 
 @media screen and (min-width: 600px) {
@@ -353,7 +384,6 @@ body {
         flex-direction: column;
     
     }
-    
     
 
 }
