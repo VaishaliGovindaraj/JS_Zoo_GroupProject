@@ -45,7 +45,19 @@ body {
     align-items: center;
     font-size: 1rem;
     color: white;
-    padding: 32px;
+    padding:32px;
+}
+
+.nav_menu {
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width:100%;
+}
+
+.nav_menu a { 
+    color: white;
+    font-size: 1.5rem;
 }
 
 .blur-container {
@@ -147,7 +159,6 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-
     body {
         min-height: 100%;
         margin: 0;
