@@ -282,25 +282,5 @@ body{
         height:auto;
     }
     
-    .footer {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas: 
-        "logo contact social"
-        "copyright copyright copyright";
-        padding: 24px;
-        gap: 36px;
-        align-items: baseline;
-        text-align: center;
-    }
-
-    .footer_social-media a {
-        text-decoration: none;
-    }
-
-    .footer-copyright {
-        grid-area: copyright;
-        padding: 10px;
-    }
 
 }
