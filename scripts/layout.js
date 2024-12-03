@@ -1,6 +1,6 @@
 
 const footerInfo = {
-    title: "Safaripark",
+    title: "SafariPark",
     contact: "Get in touch",
     email: "info@safaripark.com",
     phone: "+46 723500460"
