@@ -6,12 +6,97 @@
 // document.querySelector(".testdiv").style.color = "#fff";
 
 
-// Side bar starts here
+// Create the sidebar section
+const sidebar = document.createElement('section1');
+sidebar.classList.add('sidebar');
+
+// Create the dropdown menu container
+const dropdownMenu = document.createElement('div');
+dropdownMenu.classList.add('dropdown_menu');
+
+// Create and append the heading
+const heading = document.createElement('h2');
+heading.textContent = 'Zoo Animals';
+dropdownMenu.appendChild(heading);
+
+// Create the main list
+const mainList = document.createElement('ul');
+
+// Data structure for the menu items
+const animalGroups = [
+  {
+    title: 'Mammals',
+    items: ['Echidna', 'Tasmanian Devil', 'Quokka']
+  },
+  {
+    title: 'Reptiles',
+    items: ['Frill-necked lizard', 'Hawksbill Turtle', 'Perentie']
+  },
+  {
+    title: 'Birds',
+    items: ['Cassowary', 'Kookaburra', 'Yellow Tailed Black Cockatoo']
+  }
+];
+
+// Populate the list with groups and dropdowns
+animalGroups.forEach(group => {
+  // Create a list item for each group
+  const groupItem = document.createElement('li');
+  groupItem.classList.add('group');
+
+  // Create the group title
+  const groupTitle = document.createElement('span');
+  groupTitle.classList.add('group-title');
+  groupTitle.innerHTML = `${group.title} <span class="arrow">▼</span>`;
+
+  // Create the dropdown list
+  const dropdownList = document.createElement('ul');
+  dropdownList.classList.add('dropdown');
+
+  // Add items to the dropdown
+  group.items.forEach(item => {
+    const dropdownItem = document.createElement('li');
+    dropdownItem.classList.add('dropdown-item');
+    dropdownItem.textContent = item;
+    dropdownList.appendChild(dropdownItem);
+  });
+
+  // Append title and dropdown to the group item
+  groupItem.appendChild(groupTitle);
+  groupItem.appendChild(dropdownList);
+
+  // Add the group item to the main list
+  mainList.appendChild(groupItem);
+});
+
+// Append the main list to the dropdown menu
+dropdownMenu.appendChild(mainList);
+
+// Append the dropdown menu to the sidebar
+sidebar.appendChild(dropdownMenu);
+
+// Add the sidebar to the body (or any other desired container)
+document.querySelector('.sidebar_content').appendChild(sidebar);
+
+// Side bar function starts here
 
 // JavaScript for dropdown functionality with downward arrow
 const groups = document.querySelectorAll('.group-title');
 groups.forEach(group => {
   group.addEventListener('click', () => {
+    // Hide other dropdowns
+    groups.forEach(otherGroup => {
+      const otherDropdown = otherGroup.nextElementSibling;
+      const otherArrow = otherGroup.querySelector('.arrow');
+      if (otherGroup !== group) {
+        otherDropdown.style.display = 'none'; // Hide other dropdowns
+        otherArrow.classList.remove('expanded'); // Remove 'expanded' from other arrows
+      }
+      menuItems.forEach(item => {
+        item.style.backgroundColor = '';  // Resets all the selected animals
+      });
+    });
+
     const dropdown = group.nextElementSibling;
     const arrow = group.querySelector('.arrow');
     if (dropdown.style.display === 'block') {
@@ -32,7 +117,6 @@ groups.forEach(group => {
     document.querySelector('.animal-container').style.display = 'none'; // hide the animal details
   });
 });
-
 
 //mammal objects 
 function Animals(groupName, name, lifeSpan, food, description, length, weight, place, src, group, groupLink) {
@@ -109,19 +193,35 @@ function rgbToHex(rgb) {
     }
     return rgb; // Return original value if not in RGB format
   }
-// Truncate text to 200 characters
-  function truncateText(text) {
-    return text.length > 200 ? text.slice(0, 200) + "..." : text;
-  }
+
+// Function to truncate text
+function truncateText(text, limit = 200) {
+    return text.length > limit ? text.slice(0, limit) + "..." : text;
+}
+
+// Function to toggle full text and truncated text
+function toggleText(element, fullText) {
+    const isTruncated = element.dataset.truncated === "true";
+
+    if (isTruncated) {
+        // Show full text
+        element.textContent = fullText;
+        element.nextElementSibling.textContent = "Read Less";
+    } else {
+        // Show truncated text
+        element.textContent = truncateText(fullText);
+        element.nextElementSibling.textContent = "Read More";
+    }
+
+    element.dataset.truncated = !isTruncated; // Toggle the state
+}
 
 // JavaScript for highllighting the animal on mouse click / mouse over
 const menuItems = document.querySelectorAll('.dropdown-item');
 menuItems.forEach(item => {
-  // Handle click event
     item.addEventListener('click', function (e) {
         active_animal_color = rgbToHex(this.style.backgroundColor);
         active_animal_name = this.textContent;
-        //console.log(active_animal_name)
 
         menuItems.forEach(menu => menu.style.backgroundColor = ''); // resets all animals background color
         if(active_animal_color != '#d8611c'){
@@ -134,31 +234,47 @@ menuItems.forEach(item => {
             index = findAnimalIndexByName(active_animal_name) //find the clicked animal in the animalArray
             document.querySelector('.animal-image').src  = animalArray[index]['src']
             document.querySelector('.animal-food').textContent  = animalArray[index]['food']
-            document.querySelector('.animal-description').textContent  = truncateText(animalArray[index]['description'])
+
+            //document.querySelector('.animal-description').textContent  = truncateText(animalArray[index]['description'])
+
+            const descriptionElement = document.querySelector(`.animal-description`);
+            const fullDescription = animalArray[index]['description'];
+        
+            // Set initial truncated text
+            descriptionElement.textContent = truncateText(fullDescription);
+            descriptionElement.dataset.truncated = "true"; // Track state
+        
+            // Create and append the toggle button
+            const toggleButton = document.createElement('button');
+            toggleButton.textContent = "Read More";
+            toggleButton.addEventListener('click', () => toggleText(descriptionElement, fullDescription));
+        
+            document.querySelector('.animal-description').appendChild(toggleButton);
+
+
             const selected_animal = document.querySelector('.animal-container')
             document.querySelector('.animal-group').textContent  = animalArray[index]['group']
             document.querySelector('.animal-group-link').href  = animalArray[index]['groupLink']
             selected_animal.style.display = 'block'; // show the animal details
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 768) {// If the screen width is 768px or less (typically mobile size)
               selected_animal.focus();
               selected_animal.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         }
         else{
-          if (window.innerWidth <= 768) {
-            // If the screen width is 600px or less (typically mobile size)
-            document.querySelector('.welcome-container').style.display = 'grid'; // show the welcome message on click
-        } else {
-            // If the screen width is greater than 600px (typically desktop or larger screen size)
-            document.querySelector('.welcome-container').style.display = 'flex'; // show the welcome message on click
-        }
+            if (window.innerWidth <= 768) {
+                // If the screen width is 768px or less (typically mobile size)
+                document.querySelector('.welcome-container').style.display = 'grid'; // show the welcome message on click
+            } else {
+                // If the screen width is greater than 768px (typically desktop or larger screen size)
+                document.querySelector('.welcome-container').style.display = 'flex'; // show the welcome message on click
+            }
             document.querySelector('.animal-container').style.display = 'none'; // hide the animal details
-
             this.style.backgroundColor = ''; //remove the highlight color for selected animal
         }     
   });
 
-  // Handle mouseover event (triggered when hovering over the item)
+  // Handle mouseover event (triggered when hovering over the animal names)
   item.addEventListener('mouseover', function (e) {
     if(rgbToHex(this.style.backgroundColor) != '#d8611c'){ // checking whether the animal is clicked or not
         this.style.backgroundColor = '#569e60';  // Set a different background color on hover
@@ -170,12 +286,9 @@ menuItems.forEach(item => {
 
   // Handle mouseout event (reset background color when mouse leaves the item)
   item.addEventListener('mouseout', function (e) {
-    //console.log(rgbToHex(this.style.backgroundColor))
     if(rgbToHex(this.style.backgroundColor) != '#d8611c'){
-        this.style.backgroundColor = '';  // Set a different background color on hover
+        this.style.backgroundColor = '';  // remove the highlighted color on mouse out
     }
-    this.style.border = ''; // remove the highlight the selected animal on hover
+    this.style.border = ''; // remove the highlights for the selected animal on mouse out
   });
 });
-
-
