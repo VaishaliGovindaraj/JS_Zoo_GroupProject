@@ -71,3 +71,20 @@
     }
 }
 
+/* Medium screens (tablets, 768px and below) */
+@media (min-width: 768px) and (max-width: 1058px) {
+    /* Sidebar occupies the first row */
+    .sidebar {
+        width: 100%; /* Full width for the sidebar */
+        height: auto; /* Adjust height dynamically */
+        position: relative; /* Ensure it stacks correctly */
+        font-size: 1rem;
+        margin-left: -10%;
+      }
+      .sidebar h2{
+        font-size: 1rem;
+      }
+  
+  
+   
+  }
