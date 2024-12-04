@@ -15,6 +15,14 @@
 // Side bar starts here
 
 // JavaScript for dropdown functionality with downward arrow
+
+const headerLogo = document.querySelector(".header img");
+
+headerLogo.src = "./images/index/logo/rb_121824.png";
+headerLogo.alt = "logo image";
+
+document.querySelector(".header h2").textContent = "SafariPark";
+
 const groups = document.querySelectorAll('.group-title');
 groups.forEach(group => {
   group.addEventListener('click', () => {
@@ -211,6 +219,7 @@ instagramLink.addEventListener("click", () => openLink("instagram"));
 twitterLink.addEventListener("click", () => openLink("twitter"));
 
 document.querySelector(".footer-copyright p").textContent = "Copyright © 2024 SafariPark. All rights reserved.";
+
 
 
 
