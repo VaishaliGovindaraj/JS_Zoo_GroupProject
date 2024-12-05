@@ -107,7 +107,7 @@ groups.forEach(group => {
       arrow.classList.add('expanded');
     }
 
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 1058) {
       // If the screen width is 600px or less (typically mobile size)
       document.querySelector('.welcome-container').style.display = 'grid'; // show the welcome message on click
   } else {
@@ -262,8 +262,8 @@ menuItems.forEach(item => {
             }
         }
         else{
-            if (window.innerWidth <= 768) {
-                // If the screen width is 768px or less (typically mobile size)
+            if (window.innerWidth <= 1058) {
+                // If the screen width is 1058 or less (typically mobile size)
                 document.querySelector('.welcome-container').style.display = 'grid'; // show the welcome message on click
             } else {
                 // If the screen width is greater than 768px (typically desktop or larger screen size)
