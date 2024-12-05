@@ -5,7 +5,6 @@
 // parentDiv.appendChild(mainContent);
 // document.querySelector(".testdiv").style.color = "#fff";
 
-
 // Create the sidebar section
 const sidebar = document.createElement('section1');
 sidebar.classList.add('sidebar');
@@ -292,3 +291,12 @@ menuItems.forEach(item => {
     this.style.border = ''; // remove the highlights for the selected animal on mouse out
   });
 });
+
+const headerLogo = document.querySelector(".header img");
+
+headerLogo.src = "./images/index/logo/rb_121824.png";
+headerLogo.alt = "logo image";
+
+
+document.querySelector(".header h2").textContent = "SafariPark"
+
