@@ -239,7 +239,7 @@
   margin-left: 10%;
   margin-right: -20%;
   height: 100vh;
-  width: 90%;
+  width: 100%;
   position: relative;
   z-index: 1; /* Ensure slanted videos sit above the background */
   border: 1px solid #ffffff; /* Add a solid white border */
