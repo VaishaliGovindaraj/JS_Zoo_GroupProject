@@ -1,0 +1,255 @@
+/* welcome message*/
+.welcome-container {
+    display: flex;
+    margin-left: 20%;
+    margin-right: -10%;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 1; /* Ensure slanted videos sit above the background */
+    border: 1px solid #ffffff; /* Add a solid white border */
+}
+
+/* animal details*/
+.animal-container {
+    margin-left: 20%;
+    margin-right: -10%;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 1; /* Ensure slanted videos sit above the background */
+    border: 1px solid #ffffff; /* Add a solid white border */
+    display: none;
+    background-color: #10160f;
+    padding: 30px;
+    
+}
+
+/* animal details images*/
+.animal-container img{
+  height: 200px;
+  width: 200px;
+}
+
+/* animal details links*/
+.animal-container a{
+  color: antiquewhite;
+}
+
+/* animal details links*/
+.animal-container a:hover{
+  color: rgb(241, 161, 55);
+}
+
+/* Base styling for video containers */
+.video-container {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* First subtle slanted container */
+.video-container:first-child {
+    /*clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);*/
+    clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* Middle container with double subtle slant */
+.video-container:nth-child(2) {
+    /*clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);*/
+    clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* Last container with minimal slant */
+.video-container:last-child {
+    /*clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);*/
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* Adding subtle separator effects */
+.video-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    /* Dark gradient separator effect */
+    border-right: 4px solid transparent;
+    border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9));
+    border-image-slice: 1;
+}
+
+/* Overlay for welcome message */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Stack the h1 and p elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    z-index: 2;
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3); /* Darker overlay for better contrast */
+    padding: 0 20px;
+}
+
+/* Styling for the main heading */
+.overlay h1 {
+    font-size: 5rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Styling for the subtitle */
+.overlay div {
+    font-size: 2rem;
+    margin-top: 10px; /* Space between the heading and subtitle */
+    font-weight: lighter;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+/* General styles for larger screens (default) */
+/* Already included in your CSS */
+
+/* Medium screens (tablets, 768px and below) */
+@media screen and (max-width: 768px) {
+  .content{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-content{
+
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+  }
+
+  /* Welcome container (video section) moves below */
+  .welcome-container {
+    margin-left: -10px;
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 1; /* Ensure slanted videos sit above the background */
+    border: 1px solid #ffffff; /* Add a solid white border */
+  }
+  .animal-container {
+    margin-left: -10px;
+    font-size: 1rem;
+    overflow-y: scroll;
+    
+  }
+
+  /* Individual video containers */
+  .video-container {
+    width: 100%; /* Each video container spans full width */
+    height: auto; /* Allow videos to resize dynamically */
+    position: relative; /* Ensure no overlap with other elements */
+    z-index: 1; /* Ensure correct stacking below sidebar */
+  }
+
+  .video-container video {
+    width: 100%; /* Ensure video fits its container */
+    height: 100%; /* Maintain aspect ratio */
+  }
+  .overlay h1 {
+    font-size: 2rem; /* Reduce heading size */
+  }
+
+  .overlay div {
+    font-size: 1.5rem; /* Reduce subtitle size */
+  }
+
+}
+
+
+
+@media screen and (max-width: 480px) {
+  .content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-content{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+  }
+
+  .animal-container {
+    font-size: 1rem; 
+  }
+  /* Welcome container (video section) moves below */
+  .welcome-container {
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 1; /* Ensure slanted videos sit above the background */
+    border: 1px solid #ffffff; /* Add a solid white border */
+  }
+
+  /* Individual video containers */
+  .video-container {
+    width: 100%; /* Each video container spans full width */
+    height: auto; /* Allow videos to resize dynamically */
+    position: relative; /* Ensure no overlap with other elements */
+    z-index: 1; /* Ensure correct stacking below sidebar */
+  }
+
+  .video-container video {
+    width: 100%; /* Ensure video fits its container */
+    height: 100%; /* Maintain aspect ratio */
+  }
+  .overlay h1 {
+    font-size: 1.5rem; /* Reduce heading size */
+  }
+
+  .overlay div {
+    font-size: 1rem; /* Reduce subtitle size */
+  }
+
+}
+
+/* Medium screens (tablets, 768px and below) */
+@media screen and (min-width: 768px) and (max-width: 1058px) {
+/* welcome message*/
+.welcome-container {
+  display: grid;
+  margin-left: 10%;
+  margin-right: -20%;
+  height: 100vh;
+  width: 90%;
+  position: relative;
+  z-index: 1; /* Ensure slanted videos sit above the background */
+  border: 1px solid #ffffff; /* Add a solid white border */
+}
+.overlay h1 {
+  font-size: 2rem; /* Reduce heading size */
+}
+
+.overlay div {
+  font-size: 1rem; /* Reduce subtitle size */
+}
+}
+

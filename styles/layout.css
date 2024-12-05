@@ -289,7 +289,7 @@ body{
     }
     
     .main-content{
-        flex-basis: 90%;
+        flex-basis: 70%;
         color:white;
         padding:16px;
         font-size: 1rem;
