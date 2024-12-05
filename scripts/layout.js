@@ -1,4 +1,3 @@
-
 const footerInfo = {
     title: "SafariPark",
     contact: "Get in touch",
