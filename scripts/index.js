@@ -9,7 +9,7 @@
 
 const headerLogo = document.querySelector(".header img");
 
-headerLogo.src = "./images/index/logo/rb_121824.png";
+headerLogo.src = "../images/index/logo/rb_121824.png";
 headerLogo.alt = "logo image";
 
 
