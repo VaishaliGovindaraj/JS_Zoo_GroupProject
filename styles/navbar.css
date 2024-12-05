@@ -1,57 +1,63 @@
 /* Nav Bar */
 
-.navbar {
+
+.navbar{
     min-height: 70px;
     display:flex;
     justify-content: center;
     align-items: center;
-    padding: 0 16px;
+
+    padding: 0 24px;
 }
 
-.nav-menu {
+.nav-menu{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding-inline-start: 10px;
-    gap: 30px;
+    gap:60px;
 }
 
-.nav-menu li {
+.nav-menu li{
     list-style: none;
 }
 
-.nav-menu li a {
+.nav-menu li a{
+
     color: white;
     font-size: 1.5rem;
     text-decoration: none;
 }
 
-.nav-link {
+
+.nav-link{
     transition: 0.7s ease;
 }
 
-.nav-link:hover {
+.nav-link:hover{
     color: white;
     background-color: #dda15e;
-    padding: 10px;
+    padding: 16px;
     border-radius: 15px;
     border: 3px solid #142103;
 }
 
-.navbar .nav-menu .nav-item .nav-active {
+.navbar .nav-menu .nav-item .nav-active{
     color:white;
     background-color: #bc6c25;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 16px;
+    border-radius: 15px;
     border: 3px solid #142103;
 }
 
-.hamburger {
+.hamburger{
+
     display: none;
     cursor: pointer;
 }
 
-.bar {
+
+.bar{
+
     display: block;
     width: 25px;
     height: 3px;
@@ -61,30 +67,25 @@
     background-color: white;
 }
 
-@media screen and (max-width: 1200px) {
-    .nav-menu li a {
-        font-size: 1.25rem;
-    }
-}
 
-@media screen and (max-width: 1024px) {
-    .hamburger {
+@media screen and (max-width: 768px){
+    .hamburger{
         display:block;
     }
 
-    .hamburger.active .bar:nth-child(2) {
+    .hamburger.active .bar:nth-child(2){
         opacity: 0;
     }
 
-    .hamburger.active .bar:nth-child(1) {
+    .hamburger.active .bar:nth-child(1){
         transform: translateY(8px) rotate(45deg);
     }
 
-    .hamburger.active .bar:nth-child(3) {
+    .hamburger.active .bar:nth-child(3){
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    .nav-menu {
+    .nav-menu{
         position:fixed;
         left: -100%;
         top: 120px;
@@ -96,11 +97,11 @@
         transition: 0.3s;
     }
 
-    .nav-item {
+    .nav-item{
         margin: 16px 0;
     }
 
-    .nav-menu.active {
+    .nav-menu.active{
         left:0; 
         z-index: 3;
     }      

@@ -129,6 +129,7 @@
 
 /* Medium screens (tablets, 768px and below) */
 @media screen and (max-width: 768px) {
+
   .content{
     display: flex;
     flex-direction: column;
@@ -183,7 +184,9 @@
 
 
 
+
 @media screen and (max-width: 480px) {
+
   .content{
     position: relative;
     display: flex;
@@ -231,6 +234,7 @@
 
 }
 
+
 /* Medium screens (tablets, 768px and below) */
 @media screen and (min-width: 768px) and (max-width: 1058px) {
 /* welcome message*/
@@ -252,4 +256,5 @@
   font-size: 1rem; /* Reduce subtitle size */
 }
 }
+
 
