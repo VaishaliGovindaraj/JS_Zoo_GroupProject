@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
     <script src="./scripts/layout.js" defer></script>
     <script src="./scripts/navbar.js" defer></script>
 </head>
+
 <body>
     <div class="hero_content">
         <header class="header">
@@ -37,6 +39,7 @@
                     <li class="nav-item">
                         <a href="./html/about-us.html" class="nav-link">About-Us</a>
                     </li>                
+
                 </ul>
                 <div class="hamburger">
                     <span class="bar"></span>
@@ -51,43 +54,49 @@
 
             <section class="sidebar_content"></section>
             <section class="main-content">
-                <div class="welcome-container" id="welcome-container">
-                    <!-- First Video Container -->
-                    <div class="video-container">
-                        <video src="./videos/kangarooo.mp4" autoplay muted loop></video>
+                <div class="welcome_wrapper">
+                    <div class="welcome-container" id="welcome-container">
+                        <!-- First Video Container -->
+                        <div class="video-container">
+                            <video src="./videos/kangarooo.mp4" autoplay muted loop></video>
+                        </div>
+
+                        <!-- Second Video Container -->
+                        <div class="video-container">
+
+                            <video src="./videos/233037_small.mp4" autoplay muted loop></video>
+                        </div>
+
+                        <!-- Third Video Container -->
+                        <div class="video-container">
+                            <video src="./videos/17310952-uhd_3840_2160_30fps.mp4" autoplay muted loop></video>
+                        </div>
+
+                        <!-- Overlay Welcome Message -->
+                        <div class="overlay">
+                            <h1>Welcome to SafariPark</h1>
+                            <div> Explore new Australian animals </div>
+                        </div>
                     </div>
 
-                    <!-- Second Video Container -->
-                    <div class="video-container">
+                    <div class="welcome_content">
                         
-                        <video src="./videos/233037_small.mp4" autoplay muted loop></video>
-                    </div>
-
-                    <!-- Third Video Container -->
-                    <div class="video-container">
-                        <video src="./videos/17310952-uhd_3840_2160_30fps.mp4" autoplay muted loop></video>
-                    </div>
-
-                    <!-- Overlay Welcome Message -->
-                    <div class="overlay">
-                        <h1>Welcome to SafariPark</h1> 
-                        <div> Explore new Australian animals </div>
                     </div>
                 </div>
 
                 <div class="animal-container" id="animal-container">
-                    <img src="./images/Echidna.jpg" class="animal-image"> 
-                    <h2 class="animal-name"></h2>  <!-- h1 will be only once appear in the main page -->
+                    <img src="./images/Echidna.jpg" class="animal-image">
+                    <h2 class="animal-name"></h2> <!-- h1 will be only once appear in the main page -->
                     <p> Description: <span class="animal-description"></span> </p>
                     <p> Food: <span class="animal-food"></span> </p>
                     <p> Group: <a class="animal-group-link" href="#"><span class="animal-group"></span> </a></p>
-                    
-                    
-                    
+
+
+
                 </div>
 
-                
-            </section> 
+
+            </section>
         </section>
     </section>
     <footer class="footer">
@@ -115,4 +124,5 @@
         </div>
     </footer>
 </body>
+
 </html>
