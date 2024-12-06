@@ -15,7 +15,7 @@ body {
 .welcome-mammal {
     display: block;
     margin-left: 0%;
-    background-color: green;
+    background-color: rgba(103, 92, 43, 0.5);
     padding: 8px;
     height: fit-content;
     width: 100%;
