@@ -183,6 +183,11 @@ function toggleText(element, fullText) {
     element.dataset.truncated = !isTruncated; // Toggle the state
 }
 
+function showDetails(fullDescription) {
+    document.querySelector('.animal-description').textContent = fullDescription;
+    document.querySelector('.animal-details').style.display = 'block';
+}
+
 // JavaScript for highllighting the animal on mouse click / mouse over
 const menuItems = document.querySelectorAll('.dropdown-item');
 menuItems.forEach(item => {
@@ -214,14 +219,16 @@ menuItems.forEach(item => {
             // Create and append the toggle button
             const toggleButton = document.createElement('button');
             toggleButton.textContent = "Read More";
-            toggleButton.addEventListener('click', () => toggleText(descriptionElement, fullDescription));
-        
+            document.querySelector('.animal-details').style.display = 'none';
+            toggleButton.addEventListener('click', () => showDetails(fullDescription));
             document.querySelector('.animal-description').appendChild(toggleButton);
-
-
             const selected_animal = document.querySelector('.animal-container')
-            document.querySelector('.animal-group').textContent  = animalArray[index]['group']
+            document.querySelector('.animal-group').textContent = animalArray[index]['group']
             document.querySelector('.animal-group-link').href  = animalArray[index]['groupLink']
+            document.querySelector('.animal-life-span').textContent  = animalArray[index]['lifeSpan']
+            document.querySelector('.animal-length').textContent  = animalArray[index]['length']
+            document.querySelector('.animal-weight').textContent  = animalArray[index]['weight']
+            document.querySelector('.animal-place').textContent  = animalArray[index]['place']
             selected_animal.style.display = 'block'; // show the animal details
             if (window.innerWidth <= 768) {// If the screen width is 768px or less (typically mobile size)
               selected_animal.focus();
@@ -261,3 +268,42 @@ menuItems.forEach(item => {
 });
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    const videos = document.querySelectorAll('.video');
+    const dots = document.querySelectorAll('.dot');
+    const descriptionBox = document.querySelector('.description-box');
+    const description = descriptionBox.querySelector('.description');
+    const readMoreBtn = descriptionBox.querySelector('.read-more-btn');
+  
+    const descriptions = [
+        "Frill necked lizard",
+        "Parentie",
+        "Hawks bill turtle"
+    ];
+  
+    let currentIndex = 0;
+  
+    const updateVideo = (index) => {
+        videos.forEach((video, i) => {
+            video.classList.toggle('active', i === index);
+        });
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+        description.textContent = descriptions[index];
+        description.classList.remove('expanded');
+        currentIndex = index;
+    };
+  
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const index = parseInt(dot.getAttribute('data-index'));
+            updateVideo(index);
+        });
+    });
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % videos.length;
+        updateVideo(currentIndex);
+    }, 5000);
+  });

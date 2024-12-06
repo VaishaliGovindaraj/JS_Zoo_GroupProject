@@ -53,41 +53,50 @@
             <section class="sidebar_content"></section>
             <section class="main-content">
                 <div class="welcome-container" id="welcome-container">
-                    <!-- First Video Container -->
-                    <div class="video-container">
-                        <video src="./videos/kangarooo.mp4" autoplay muted loop></video>
-                    </div>
-
-                    <!-- Second Video Container -->
-                    <div class="video-container">
-                        
-                        <video src="./videos/233037_small.mp4" autoplay muted loop></video>
-                    </div>
-
-                    <!-- Third Video Container -->
-                    <div class="video-container">
-                        <video src="./videos/17310952-uhd_3840_2160_30fps.mp4" autoplay muted loop></video>
-                    </div>
-
-                    <!-- Overlay Welcome Message -->
-                    <div class="overlay">
-                        <h1>Reptiles</h1> 
+                    <section class="video-slider">
+                        <div class="video-container">
+                            <video autoplay loop muted class="video active">
+                                <source src="../videos/chamelion.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <video autoplay loop muted class="video">
+                                <source src="../videos/lizard.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <video autoplay loop muted class="video">
+                                <source src="../videos/turtles.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <!-- Overlay Welcome Message -->
+                    <div class="message">
+                        <h2>Reptiles</h2> 
                         <div> Explore new Australian reptiles </div>
                     </div>
+                        <div class="description-box">
+                            <p class="description">Frill necked Lizard</p>
+                        </div>
+                        <div class="controls">
+                            <div class="dot active" data-index="0"></div>
+                            <div class="dot" data-index="1"></div>
+                            <div class="dot" data-index="2"></div>
+                        </div>
+                    </section>
                 </div>
-
-                <div class="animal-container" id="animal-container">
-                    <img src="./images/Echidna.jpg" class="animal-image"> 
+                <div class="animal-container" id="animal-container" >
+                    <div style="text-align: center;">
+                    <img src="./images/Echidna.jpg" class="animal-image"> </div>
                     <h2 class="animal-name"></h2>  <!-- h1 will be only once appear in the main page -->
                     <p> Description: <span class="animal-description"></span> </p>
+                    <span class="animal-details" >
                     <p> Food: <span class="animal-food"></span> </p>
                     <p> Group: <a class="animal-group-link" href="#"><span class="animal-group"></span> </a></p>
-                    
-                    
-                    
+                    <p> LifeSpan: <span class="animal-life-span"></span> </p>
+                    <p> Length: <span class="animal-length"></span> </p>
+                    <p> Weight: <span class="animal-weight"></span> </p>
+                    <p> Place: <span class="animal-place"></span> </p>
+                </span>
                 </div>
-
-                
             </section> 
         </section>
     </section>
