@@ -5,6 +5,7 @@
 // parentDiv.appendChild(mainContent);
 // document.querySelector(".testdiv").style.color = "#fff";
 
+
 // Create the sidebar section
 const sidebar = document.createElement('section1');
 sidebar.classList.add('sidebar');
@@ -165,7 +166,10 @@ document.querySelector('.sidebar_content').appendChild(sidebar);
 
 // Side bar function starts here
 
+
 // JavaScript for dropdown functionality with downward arrow
+
+
 const groups = document.querySelectorAll('.group-title');
 groups.forEach(group => {
   group.addEventListener('click', () => {
@@ -192,7 +196,7 @@ groups.forEach(group => {
       arrow.classList.add('expanded');
     }
 
-    if (window.innerWidth <= 1058) {
+    if (window.innerWidth <= 768) {
       // If the screen width is 600px or less (typically mobile size)
       document.querySelector('.welcome_wrapper').style.display = 'grid'; // show the welcome message on click
   } else {
@@ -350,6 +354,7 @@ menuItems.forEach(item => {
             if (window.innerWidth <= 1058) {
                 // If the screen width is 1058 or less (typically mobile size)
                 document.querySelector('.welcome_wrapper').style.display = 'grid'; // show the welcome message on click
+
             } else {
                 // If the screen width is greater than 768px (typically desktop or larger screen size)
                 document.querySelector('.welcome_wrapper').style.display = 'flex'; // show the welcome message on click
