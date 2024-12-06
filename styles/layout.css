@@ -30,7 +30,13 @@ body {
 
 .logo {
     display: flex;
-    padding: 16px;
+    padding:16px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo img {
+    width: 200px;
 }
 
 .header {
@@ -45,7 +51,7 @@ body {
     align-items: center;
     font-size: 1rem;
     color: white;
-    padding:32px;
+    font-size: 2rem;
 }
 
 .nav_menu {
@@ -119,7 +125,7 @@ body {
 }
 
 .footer-logo h2 {
-    font-size: 2.6rem;
+    font-size: 2rem;
 }
 
 .footer-contact h4 {
@@ -221,7 +227,8 @@ body {
 
     .logo {
         display: flex;
-        padding: 16px;
+        padding:16px;
+        flex-direction: row;
     }
 
     .header {
@@ -301,7 +308,7 @@ body {
         "copyright copyright copyright";
         padding: 24px;
         gap: 36px;
-        align-items: baseline;
+        align-items: center;
         text-align: center;
     }
 
@@ -313,6 +320,9 @@ body {
         grid-area: copyright;
         padding: 10px;
     }
-    
+
+    .footer-logo h2 {
+        font-size: 1.5rem;
+    }
 }
 
