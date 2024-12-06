@@ -214,6 +214,12 @@ text-align: justify;
     z-index: 1; /* Ensure slanted videos sit above the background */
     border: 1px solid #ffffff; /* Add a solid white border */
   }
+
+  .description{
+    font-size: 1rem;
+    text-align:left;
+  }
+
   .animal-container {
     margin-left: -10px;
     font-size: 1rem;
@@ -333,6 +339,14 @@ text-align: justify;
 /* Medium screens (tablets, 768px and below) */
 @media screen and (min-width: 768px) and (max-width: 1058px) {
 /* welcome message*/
+
+.welcome_wrapper{
+  margin-right: -30%;
+  margin-left: 30%;
+  height: 100%;
+  width: 90%;
+}
+
 .welcome-container {
   display: grid;
   margin-right: -20%;
