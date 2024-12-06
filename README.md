@@ -36,6 +36,6 @@ Git merge main
 !!! MERGE YOUR BRANCH IN TO MAIN FOR PRODUCTION !!!
 Git checkout main
 Git merge (branch-name)
-Git add
+Git add .
 Git commit -m
 GIT PUSH!!!
