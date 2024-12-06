@@ -33,3 +33,4 @@ instagramLink.addEventListener("click", () => openLink("instagram"));
 twitterLink.addEventListener("click", () => openLink("twitter"));
 
 document.querySelector(".footer-copyright p").textContent = "Copyright © 2024 SafariPark. All rights reserved.";
+
