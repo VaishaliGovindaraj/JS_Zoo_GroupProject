@@ -241,5 +241,22 @@
         height: 300px;
         width: 300px;
     }
+        /* Welcome container (video section) moves below */
+    .welcome-container {
+        height: 100vh;
+        width: 100%;
+        margin-left: 10%;
+    }
+  }
+
+  /* Medium screens (tablets, 768px and below) */
+  @media screen and (min-width: 1024px ) and (max-width: 1366px) {
+
+        /* Welcome container (video section) moves below */
+    .welcome-container {
+        height: 100vh;
+        width: 100%;
+        margin-left: 20%;
+    }
   }
 
