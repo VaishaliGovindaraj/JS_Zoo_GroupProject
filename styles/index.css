@@ -5,7 +5,7 @@
   flex-direction: column;
   width: 100%;
   margin-right: -10%;
-  margin-left: 15%;
+  margin-left: 20%;
 }
 
 .welcome_content{
@@ -328,6 +328,13 @@ text-align: justify;
 /* Medium screens (tablets, 768px and below) */
 @media screen and (min-width: 768px) and (max-width: 1058px) {
 /* welcome message*/
+.welcome_wrapper{
+  margin-right: -30%;
+  margin-left: 15%;
+  height: 100%;
+  width: 90%;
+}
+
 .welcome-container {
   display: grid;
   margin-right: -20%;
