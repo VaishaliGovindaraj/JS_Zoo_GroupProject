@@ -1,3 +1,21 @@
+.welcome_content{
+    width: 100%;
+    margin-left: 20%;
+    margin-right: -10%;
+  }
+  
+  /* welcome message*/
+  .welcome-container {
+    display: flex;
+    margin-left: 20%;
+    margin-right: -10%;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 1; /* Ensure slanted videos sit above the background */
+    border: 1px solid #ffffff; /* Add a solid white border */
+  }
+
 .video-slider {
     position: relative;
     width: 100%;
@@ -129,7 +147,7 @@
 }
 
 /* Medium screens (tablets, 768px and below) */
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 480px) and (max-width: 768px) {
     .description-box,
     .controls
     {
@@ -153,7 +171,13 @@
     .animal-container img{
         height: 100px;
         width: 100px;
-      }
+    }
+        /* Welcome container (video section) moves below */
+  .welcome-container {
+    height: 100vh;
+    width: 100%;
+    margin-left: 10px;
+  }
   }
     
   @media screen and (max-width: 480px) {
@@ -181,7 +205,13 @@
         height: 100px;
         width: 100px;
     }
-  
+    /* Welcome container (video section) moves below */
+  .welcome-container {
+    height: 100vh;
+    width: 100%;
+    margin-left: 10px;
+  }
+
   }
   
   
@@ -210,6 +240,6 @@
     .animal-container img{
         height: 300px;
         width: 300px;
-      }
+    }
   }
 
