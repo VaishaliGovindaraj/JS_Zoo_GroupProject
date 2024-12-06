@@ -1,3 +1,18 @@
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+})
+
+document.querySelectorAll(".nav-link").forEach(n => 
+    n.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+    }))
+
+
 const footerInfo = {
     title: "SafariPark",
     contact: "Get in touch",
@@ -25,3 +40,11 @@ instagramLink.addEventListener("click", () => openLink("instagram"));
 twitterLink.addEventListener("click", () => openLink("twitter"));
 
 document.querySelector(".footer-copyright p").textContent = "Copyright © 2024 SafariPark. All rights reserved.";
+
+const headerLogo = document.querySelector(".header img");
+
+headerLogo.src = "../images/index/logo/rb_121824.png";
+headerLogo.alt = "logo image";
+
+
+document.querySelector(".header h2").textContent = "SafariPark"
