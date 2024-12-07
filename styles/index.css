@@ -74,7 +74,12 @@ text-align: justify;
     display: none;
     background-color: #10160f;
     padding: 30px;
-    
+    overflow-y: scroll;
+    scrollbar-width: none; /* For Firefox: Hides scrollbar */
+}
+
+.animal-container::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge: Hides scrollbar */
 }
 
 /* animal details images*/
