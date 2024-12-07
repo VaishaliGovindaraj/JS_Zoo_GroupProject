@@ -15,6 +15,16 @@
     z-index: 1; /* Ensure slanted videos sit above the background */
     border: 1px solid #ffffff; /* Add a solid white border */
   }
+  .animal-container {
+    display: none;
+    margin-left: 20%;
+    margin-right: -10%;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 1; /* Ensure slanted videos sit above the background */
+    border: 1px solid #ffffff; /* Add a solid white border */
+  }
 
 .video-slider {
     position: relative;
@@ -178,6 +188,11 @@
     width: 100%;
     margin-left: 10px;
   }
+  .animal-container {
+    height: 100vh;
+    width: 100%;
+    margin-left: 10px;
+  }
   }
     
   @media screen and (max-width: 480px) {
@@ -207,6 +222,11 @@
     }
     /* Welcome container (video section) moves below */
   .welcome-container {
+    height: 100vh;
+    width: 100%;
+    margin-left: 10px;
+  }
+  .animal-container {
     height: 100vh;
     width: 100%;
     margin-left: 10px;
@@ -247,6 +267,11 @@
         width: 100%;
         margin-left: 30%;
     }
+    .animal-container {
+      height: 100vh;
+      width: 100%;
+      margin-left: 40%;
+  }
   }
 
   /* Medium screens (tablets, 768px and below) */
@@ -258,5 +283,10 @@
         width: 100%;
         margin-left: 30%;
     }
+    .animal-container {
+      height: 100vh;
+      width: 100%;
+      margin-left: 30%;
+  }
   }
 
