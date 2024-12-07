@@ -1,0 +1,173 @@
+.content {
+    display: flex;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    padding: 0;
+    background-color: transparent;
+    flex-grow: 1;
+    margin: 5%;
+    height: 100vh;
+}
+
+.sidebar_content {
+    flex-basis: 10%;
+    padding: 8px;
+    margin: 5%;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.member_name {
+    background-color: #4caf50;
+    /* Green, like jungle foliage */
+    color: #fff;
+    padding: 12px 15px;
+    margin: 5px 0;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    font-family: 'Courier New', Courier, monospace;
+    /* Adds a rugged theme */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.member_name:hover {
+    transform: scale(1.1);
+    background-color: #81c784;
+    /* Lighter jungle green */
+    text-decoration: none;
+}
+
+.member_name.active {
+    background-color: #1b5e20;
+    /* Deep jungle green */
+    color: #f0f8ff;
+    /* Light contrasting text */
+    border-left: 6px solid #388e3c;
+}
+
+/* Main Content: Glass Sheet Effect */
+.main_content {
+    flex-basis: 90%;
+    background: rgba(255, 255, 255, 0.2);
+    /* Semi-transparent */
+    backdrop-filter: blur(10px);
+    /* Frosted glass effect */
+    border-radius: 15px;
+    padding: 30px;
+    margin: 5%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInContainer 1s ease-in-out;
+}
+
+/* Main Content: Smooth Transitions for Elements */
+.person_name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    animation: slideInFromLeft 0.8s ease;
+}
+
+.short_description {
+    margin: 20px 0;
+    animation: slideInFromRight 0.8s ease;
+}
+
+.values {
+    margin: 20px 0;
+    animation: slideInFromLeft 0.8s ease;
+}
+
+.github_link {
+    display: block;
+    margin-top: 20px;
+    color: #0078d4;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    animation: slideInFromRight 0.8s ease;
+}
+
+.github_link:hover {
+    text-decoration: underline;
+    color: #005bb5;
+}
+
+/* Animations */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInContainer {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.default_message {
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    opacity: 0.9;
+}
+
+.person_avatar {
+    width: 10%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: #666;
+}
+
+.person_content {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.active {
+    display: block;
+}
