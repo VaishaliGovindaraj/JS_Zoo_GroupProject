@@ -74,6 +74,47 @@ let teamArray = [ankita, lava, priyesh, vaishali];
 let mainDiv = document.querySelector(".main-content");
 
 // Function to display information for a selected team member
+// function displayInfo(selectedName) {
+//     mainDiv.innerHTML = "";
+//     teamArray.forEach((item) => {
+//         if (item.name === selectedName) {
+//             let personDiv = document.createElement("div");
+//             personDiv.classList.add("person_content");
+
+//             let avatarDiv = document.createElement("img");
+//             avatarDiv.setAttribute("src", item.image);
+//             avatarDiv.setAttribute("alt", `${item.name}'s Avatar`);
+//             avatarDiv.classList.add("person_avatar");
+//             personDiv.appendChild(avatarDiv);
+
+//             let nameDiv = document.createElement("div");
+//             nameDiv.textContent = item.name;
+//             nameDiv.classList.add("person_name");
+//             personDiv.appendChild(nameDiv);
+
+//             let shortDescription = document.createElement("div");
+//             shortDescription.textContent = item.shortDescription;
+//             shortDescription.classList.add("short_description");
+//             personDiv.appendChild(shortDescription);
+
+//             let values = document.createElement("div");
+//             values.textContent = item.values;
+//             values.classList.add("values");
+//             personDiv.appendChild(values);
+
+//             let connectLink = document.createElement("a");
+//             connectLink.setAttribute("href", item.connectLink);
+//             connectLink.textContent = `Connect with  Github`;
+//             connectLink.classList.add("github_link");
+//             connectLink.setAttribute("target", "_blank");
+//             personDiv.appendChild(connectLink);
+
+//             personDiv.classList.add("active");
+//             mainDiv.appendChild(personDiv);
+//         }
+//     });
+// }
+
 function displayInfo(selectedName) {
     mainDiv.innerHTML = "";
     teamArray.forEach((item) => {
@@ -87,32 +128,46 @@ function displayInfo(selectedName) {
             avatarDiv.classList.add("person_avatar");
             personDiv.appendChild(avatarDiv);
 
-            let nameDiv = document.createElement("div");
-            nameDiv.textContent = item.name;
-            nameDiv.classList.add("person_name");
-            personDiv.appendChild(nameDiv);
+            let infoContainer = document.createElement("div");
+            infoContainer.classList.add("info_container");
 
-            let shortDescription = document.createElement("div");
-            shortDescription.textContent = item.shortDescription;
-            shortDescription.classList.add("short_description");
-            personDiv.appendChild(shortDescription);
+            let nameRow = createKeyValueRow("Name", item.name);
+            infoContainer.appendChild(nameRow);
 
-            let values = document.createElement("div");
-            values.textContent = item.values;
-            values.classList.add("values");
-            personDiv.appendChild(values);
+            let descRow = createKeyValueRow("Description", item.shortDescription);
+            infoContainer.appendChild(descRow);
 
-            let connectLink = document.createElement("a");
-            connectLink.setAttribute("href", item.connectLink);
-            connectLink.textContent = `Connect with  Github`;
-            connectLink.classList.add("github_link");
-            connectLink.setAttribute("target", "_blank");
-            personDiv.appendChild(connectLink);
+            let valuesRow = createKeyValueRow("Values", item.values);
+            infoContainer.appendChild(valuesRow);
 
-            personDiv.classList.add("active");
+            let linkRow = createKeyValueRow(
+                "GitHub Link",
+                `<a href="${item.connectLink}" target="_blank">${item.connectLink}</a>`
+            );
+            infoContainer.appendChild(linkRow);
+
+            personDiv.appendChild(infoContainer);
             mainDiv.appendChild(personDiv);
         }
     });
+}
+
+function createKeyValueRow(key, value) {
+    let row = document.createElement("div");
+    row.classList.add("key_value_row");
+
+    let keyDiv = document.createElement("div");
+    keyDiv.textContent = `${key}:`;
+    keyDiv.classList.add("key");
+
+    let valueDiv = document.createElement("div");
+    valueDiv.innerHTML = value; // Using innerHTML to handle links
+    valueDiv.classList.add("value");
+
+    row.appendChild(keyDiv);
+    row.appendChild(valueDiv);
+
+    return row;
 }
 
 // Function to display a default message on page load or reset

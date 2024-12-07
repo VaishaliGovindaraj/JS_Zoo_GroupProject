@@ -1,12 +1,28 @@
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    background-image: url("../images/about_us/about_us_bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+}
+
 .content {
     display: flex;
     font-family: 'Arial', sans-serif;
     color: #333;
     padding: 0;
-    background-color: transparent;
+    background-color: #242323;
     flex-grow: 1;
     margin: 5%;
-    height: 100vh;
+    min-height: 100vh;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 5%;
 }
 
 .sidebar_content {
@@ -18,50 +34,99 @@
 }
 
 .member_name {
-    background-color: #4caf50;
-    /* Green, like jungle foliage */
-    color: #fff;
-    padding: 12px 15px;
-    margin: 5px 0;
-    border-radius: 8px;
-    text-align: center;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 20px auto;
     cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
-    font-family: 'Courier New', Courier, monospace;
-    /* Adds a rugged theme */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    line-height: 50px;
+    background: url("../images/Cassowary.jpg") no-repeat center;
+    background-size: cover;
+    animation: bg_image_change 30s linear infinite;
+    transition: bg_image_change 1s ease-in-out;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, border-color 0.3s ease;
+}
+
+@keyframes bg_image_change {
+    15% {
+        background-image: url("../images/index/bg_bird_1.jpg");
+
+    }
+
+    30% {
+        background-image: url("../images/index/bg_bird_2.jpg");
+
+    }
+
+    60% {
+        background-image: url("../images/index/bg_bird_3.jpg");
+
+    }
+
+    80% {
+        background-image: url("../images/index/bg_bird_4.jpg");
+
+    }
+
+    100% {
+        background-image: url("../images/index/bg_bird_5.jpg");
+
+    }
 }
 
 .member_name:hover {
     transform: scale(1.1);
-    background-color: #81c784;
-    /* Lighter jungle green */
+    border-color: #666;
+}
+
+/* Key-Value Pair Styling */
+.info_container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between rows */
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.key_value_row {
+    display: flex;
+    flex-wrap: wrap; /* Wrap text if it's too long */
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.key {
+    font-weight: bold;
+    color: #fff; /* Jungle green for keys */
+    flex-basis: 20%; /* Keys take 20% width */
+    animation: slideInFromRight 0.8s ease;
+}
+
+.value {
+    flex-basis: 75%; /* Values take 75% width */
+    color: #fff;
+    word-break: break-word; 
+    animation: slideInFromLeft 0.8s ease;
+}
+
+a {
+    color: #fff;
     text-decoration: none;
 }
 
-.member_name.active {
-    background-color: #1b5e20;
-    /* Deep jungle green */
-    color: #f0f8ff;
-    /* Light contrasting text */
-    border-left: 6px solid #388e3c;
+a:hover {
+    text-decoration: underline;
+    color: #005bb5;
 }
 
-/* Main Content: Glass Sheet Effect */
-.main_content {
-    flex-basis: 90%;
-    background: rgba(255, 255, 255, 0.2);
-    /* Semi-transparent */
-    backdrop-filter: blur(10px);
-    /* Frosted glass effect */
-    border-radius: 15px;
-    padding: 30px;
-    margin: 5%;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: fadeInContainer 1s ease-in-out;
-}
-
-/* Main Content: Smooth Transitions for Elements */
 .person_name {
     font-size: 2rem;
     font-weight: bold;
@@ -77,21 +142,6 @@
 .values {
     margin: 20px 0;
     animation: slideInFromLeft 0.8s ease;
-}
-
-.github_link {
-    display: block;
-    margin-top: 20px;
-    color: #0078d4;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-    animation: slideInFromRight 0.8s ease;
-}
-
-.github_link:hover {
-    text-decoration: underline;
-    color: #005bb5;
 }
 
 /* Animations */
@@ -119,21 +169,10 @@
     }
 }
 
-@keyframes fadeInContainer {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
 .default_message {
     font-size: 1.5rem;
     color: #fff;
+    background-color: #242323;
     text-align: center;
     margin-top: 20px;
     font-family: 'Courier New', Courier, monospace;
