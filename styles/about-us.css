@@ -15,6 +15,11 @@ body {
     width: 100%;
 }
 
+.about_us{
+    color: #fff;
+    font-size: 1rem;
+}
+
 .content {
     display: flex;
     font-family: 'Arial', sans-serif;
@@ -222,6 +227,11 @@ a:hover {
         animation: none;
         transition: none;
     }
+
+    .about_us{
+        color: #fff;
+        font-size: 2rem;
+    }
     
     .blur-container{
         display: flex;
@@ -237,11 +247,11 @@ a:hover {
         padding: 0;
         background-color: #242323;
         flex-grow: 1;
-        margin: 5%;
+        margin: 3%;
         min-height: 100vh;
         backdrop-filter: blur(10px);
         border-radius: 15px;
-        padding: 30px;
+        padding: 16px;
     }
     
 
