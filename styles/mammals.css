@@ -23,7 +23,7 @@ body {
     border: 1px solid #ffffff; /* Add a solid white border */
 }
 
-.welcome-mammal h2 {
+.welcome-mammal h1 {
     font-size: 2rem;
     text-align: center;
 } 
@@ -168,11 +168,6 @@ button:hover {
 
     .mammal-grid > img {
         object-fit: contain;
-    }
-
-    h2{
-        font-size: 1.25rem;
-        text-align: center;
     }
 
 }
