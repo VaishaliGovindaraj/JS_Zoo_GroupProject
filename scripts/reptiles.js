@@ -69,8 +69,44 @@ sidebar.appendChild(dropdownMenu);
 // Add the sidebar to the body (or any other desired container)
 document.querySelector('.sidebar_content').appendChild(sidebar);
 
-// Side bar function starts here
+//Welcome message -Reptiles content creation
+// JavaScript code to generate the HTML structure dynamically
 
+videoContainer = document.querySelector('.video-container')
+
+// List of video sources
+const videos = [
+  { src: "../videos/chamelion.mp4", type: "video/mp4", active: true },
+  { src: "../videos/lizard.mp4", type: "video/mp4", active: false },
+  { src: "../videos/turtles.mp4", type: "video/mp4", active: false }
+];
+
+// Generate video elements
+videos.forEach(videoData => {
+  // Create video element
+  const videoElement = document.createElement('video');
+  videoElement.setAttribute('autoplay', '');
+  videoElement.setAttribute('loop', '');
+  videoElement.setAttribute('muted', '');
+  videoElement.className = videoData.active ? 'video active' : 'video';
+
+  // Create source element
+  const sourceElement = document.createElement('source');
+  sourceElement.setAttribute('src', videoData.src);
+  sourceElement.setAttribute('type', videoData.type);
+
+  // Append source to video
+  videoElement.appendChild(sourceElement);
+
+  // Fallback text for unsupported browsers
+  videoElement.appendChild(document.createTextNode('Your browser does not support the video tag.'));
+
+  // Append video to container
+  videoContainer.appendChild(videoElement);
+});
+
+
+// Side bar function starts here
 // JavaScript for dropdown functionality with downward arrow
 const groups = document.querySelectorAll('.group-title');
 groups.forEach(group => {
@@ -267,7 +303,7 @@ menuItems.forEach(item => {
   });
 });
 
-
+document.querySelector('.description').textContent = "Frill necked lizard"; // initialise the name when video loaded 
 document.addEventListener('DOMContentLoaded', () => {
     const videos = document.querySelectorAll('.video');
     const dots = document.querySelectorAll('.dot');
