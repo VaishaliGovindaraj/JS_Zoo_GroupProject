@@ -8,8 +8,9 @@ let ankita_name = new teamMembers("Ankita");
 let lava_name = new teamMembers("Lava");
 let priyesh_name = new teamMembers("Priyesh");
 let vaishali_name = new teamMembers("Vaishali");
+let rob_name = new teamMembers("Rob");
 
-let peopleArray = [ankita_name, lava_name, priyesh_name, vaishali_name];
+let peopleArray = [ankita_name, lava_name, priyesh_name, vaishali_name,rob_name];
 peopleArray.forEach((member) => {
     let peopleDiv = document.createElement("div");
     peopleDiv.classList.add("members_content");
@@ -65,55 +66,22 @@ let priyesh = new teamInfo(
 let vaishali = new teamInfo(
     "Vaishali",
     "../images/about_us/Vaishali.jpg", 
-    "Attention to Detail: Every feather (or pixel) in its rightful place. \n Aesthetic Brilliance: Balancing beauty and functionality with grace.",
+    "As a team player, I believe in building strong foundations and carrying the weight of development with my squad. Together, we create marvels one step at a time.",
+    "Collaboration: Like ants working in sync, I value collective effort.Efficiency: Achieving big results with small, calculated moves.",
     "https://github.com/VaishaliGovindaraj"
 );
 
-let teamArray = [ankita, lava, priyesh, vaishali];
+let rob = new teamInfo(
+    "Rob",
+    "../images/about_us/Rob_avatar.jpg",
+    "Rising from the flames of challenges, I ignite the spark of creativity and resilience in my students. Together, we create interfaces that rise above the ordinary.",
+    "Resilience: Teaching how to embrace challenges and thrive through them.Innovation: Encouraging bold, unique solutions that stand out.",
+    "https://github.com/"
+);
+
+let teamArray = [ankita, lava, priyesh, vaishali,rob];
 
 let mainDiv = document.querySelector(".main-content");
-
-// Function to display information for a selected team member
-// function displayInfo(selectedName) {
-//     mainDiv.innerHTML = "";
-//     teamArray.forEach((item) => {
-//         if (item.name === selectedName) {
-//             let personDiv = document.createElement("div");
-//             personDiv.classList.add("person_content");
-
-//             let avatarDiv = document.createElement("img");
-//             avatarDiv.setAttribute("src", item.image);
-//             avatarDiv.setAttribute("alt", `${item.name}'s Avatar`);
-//             avatarDiv.classList.add("person_avatar");
-//             personDiv.appendChild(avatarDiv);
-
-//             let nameDiv = document.createElement("div");
-//             nameDiv.textContent = item.name;
-//             nameDiv.classList.add("person_name");
-//             personDiv.appendChild(nameDiv);
-
-//             let shortDescription = document.createElement("div");
-//             shortDescription.textContent = item.shortDescription;
-//             shortDescription.classList.add("short_description");
-//             personDiv.appendChild(shortDescription);
-
-//             let values = document.createElement("div");
-//             values.textContent = item.values;
-//             values.classList.add("values");
-//             personDiv.appendChild(values);
-
-//             let connectLink = document.createElement("a");
-//             connectLink.setAttribute("href", item.connectLink);
-//             connectLink.textContent = `Connect with  Github`;
-//             connectLink.classList.add("github_link");
-//             connectLink.setAttribute("target", "_blank");
-//             personDiv.appendChild(connectLink);
-
-//             personDiv.classList.add("active");
-//             mainDiv.appendChild(personDiv);
-//         }
-//     });
-// }
 
 function displayInfo(selectedName) {
     mainDiv.innerHTML = "";
@@ -161,7 +129,7 @@ function createKeyValueRow(key, value) {
     keyDiv.classList.add("key");
 
     let valueDiv = document.createElement("div");
-    valueDiv.innerHTML = value; // Using innerHTML to handle links
+    valueDiv.innerHTML = value; 
     valueDiv.classList.add("value");
 
     row.appendChild(keyDiv);
@@ -172,7 +140,7 @@ function createKeyValueRow(key, value) {
 
 // Function to display a default message on page load or reset
 function displayDefaultMessage() {
-    mainDiv.innerHTML = "<div class='default_message'>Select a team member to learn more!</div>";
+    mainDiv.innerHTML = "<div class='default_message'>Welcome to the team behind JS-Zoo, where web development meets the wild! We're a group of passionate learners (and a wise mentor) with a mission to create an interactive and engaging virtual zoo experience. Meet the people who bring this project to life by clicking on the Team member names</div>";
 }
 
 // Call the default message display on page load
