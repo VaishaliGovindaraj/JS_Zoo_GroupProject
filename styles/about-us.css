@@ -285,6 +285,13 @@ a:hover {
         font-size: 1.5rem;
     }
     
+    .member_name:hover {
+        transform: scale(1.1);
+        border-color: #666;
+        background-color:#d8611c;
+    }
+    
+
     .default_message,
     .info_container{
         margin-top: 8px;
