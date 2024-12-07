@@ -1,11 +1,3 @@
-
-const headerLogo = document.querySelector(".header img");
-
-headerLogo.src = "../images/index/logo/rb_121824.png";
-headerLogo.alt = "logo image";
-
-document.querySelector(".header h2").textContent = "SafariPark";
-
 const footerInfo = {
     title: "SafariPark",
     contact: "Get in touch",
@@ -28,12 +20,15 @@ const socialLinks = {
     "twitter": "https://twitter.com"
 }
 
-facebookLink.addEventListener("click", () => openLink("facebook"));
-instagramLink.addEventListener("click", () => openLink("instagram"));
-twitterLink.addEventListener("click", () => openLink("twitter"));
+facebookLink.addEventListener("click", () => openLink(socialLinks["facebook"]));
+instagramLink.addEventListener("click", () => openLink(socialLinks["instagram"]));
+twitterLink.addEventListener("click", () => openLink(socialLinks["twitter"]));
+
+function openLink(uri) {
+    window.open (uri, "_blank");
+}
 
 document.querySelector(".footer-copyright p").textContent = "Copyright © 2024 SafariPark. All rights reserved.";
-
 
 const headerLogo = document.querySelector(".header img");
 
