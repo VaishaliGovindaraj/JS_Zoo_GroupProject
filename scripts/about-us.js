@@ -10,7 +10,9 @@ let priyesh_name = new teamMembers("Priyesh");
 let vaishali_name = new teamMembers("Vaishali");
 let rob_name = new teamMembers("Rob");
 
-let peopleArray = [ankita_name, lava_name, priyesh_name, vaishali_name,rob_name];
+let peopleArray = [ankita_name, lava_name, priyesh_name, vaishali_name, rob_name];
+let activeMemberDiv = null; // Track the active member's div
+
 peopleArray.forEach((member) => {
     let peopleDiv = document.createElement("div");
     peopleDiv.classList.add("members_content");
@@ -21,15 +23,20 @@ peopleArray.forEach((member) => {
     membersnameDiv.classList.add("member_name");
     peopleDiv.appendChild(membersnameDiv);
 
-    let isActive = false; // Track toggle state
-
     membersnameDiv.addEventListener("click", () => {
-        if (isActive) {
-            displayDefaultMessage(); // Reset to default message
-            isActive = false;
+        if (activeMemberDiv === membersnameDiv) {
+            // If the same member is clicked, toggle the default message
+            activeMemberDiv.classList.remove("active");
+            activeMemberDiv = null;
+            displayDefaultMessage();
         } else {
+            // Display the selected member's info
+            if (activeMemberDiv) {
+                activeMemberDiv.classList.remove("active"); // Remove the 'active' class from the previously active member
+            }
+            membersnameDiv.classList.add("active"); // Add 'active' class to the clicked member
+            activeMemberDiv = membersnameDiv; // Update the active member tracker
             displayInfo(member.name);
-            isActive = true;
         }
     });
 });
@@ -58,14 +65,14 @@ let lava = new teamInfo(
 );
 let priyesh = new teamInfo(
     "Priyesh",
-    "../images/about_us/Priyesh.png", 
+    "../images/about_us/Priyesh.png",
     "Venturing into the dense jungle of code and clearing paths for innovative solutions. I make sure no bug gets past my machete!.",
     "Exploration: Discovering new ways to streamline development. \n Tenacity: Tackling challenges head-on, no matter how wild.",
     "https://github.com/Priyesh"
 );
 let vaishali = new teamInfo(
     "Vaishali",
-    "../images/about_us/Vaishali.jpg", 
+    "../images/about_us/Vaishali.jpg",
     "As a team player, I believe in building strong foundations and carrying the weight of development with my squad. Together, we create marvels one step at a time.",
     "Collaboration: Like ants working in sync, I value collective effort.Efficiency: Achieving big results with small, calculated moves.",
     "https://github.com/VaishaliGovindaraj"
@@ -79,7 +86,7 @@ let rob = new teamInfo(
     "https://github.com/"
 );
 
-let teamArray = [ankita, lava, priyesh, vaishali,rob];
+let teamArray = [ankita, lava, priyesh, vaishali, rob];
 
 let mainDiv = document.querySelector(".main-content");
 
@@ -129,7 +136,7 @@ function createKeyValueRow(key, value) {
     keyDiv.classList.add("key");
 
     let valueDiv = document.createElement("div");
-    valueDiv.innerHTML = value; 
+    valueDiv.innerHTML = value;
     valueDiv.classList.add("value");
 
     row.appendChild(keyDiv);
