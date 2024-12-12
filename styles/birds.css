@@ -62,12 +62,17 @@
     backdrop-filter: blur(10px) brightness(0.5);
 }
 
+.title-area h1 {
+    word-wrap: break-word;
+}
+
 #birds_title {
     font-size: 1.5rem;
     text-align: center;
     color: white;
     padding: 16px;
     border-radius: 10px;
+
 }
 
 #animal-summary {
