@@ -1,0 +1,321 @@
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    background-image: url("../images/about_us/about_us_bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+.blur-container{
+    background-color: #242323;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.about_us{
+    color: #fff;
+    font-size: 1rem;
+}
+
+.content {
+    display: flex;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    padding: 0;
+    background-color: #242323;
+    flex-grow: 1;
+    margin: 8px;
+    min-height: 100vh;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 8px;
+}
+
+.main-content{
+    padding:16px;
+}
+
+.sidebar_content {
+    flex-basis: 10%;
+    margin: 8px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.member_name {
+    position: relative;
+    width: 100%;
+    height:100%;
+    margin: 10% ;
+    cursor: pointer;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    font-size: 1rem;
+    color: #fff;
+    line-height: 50px;
+    border: 6px solid #333;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, border-color 0.3s ease;
+}
+
+.member_name:hover {
+    transform: scale(1.1);
+    border-color: #666;
+    background-color:#d8611c;
+}
+
+/* Key-Value Pair Styling */
+.info_container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between rows */
+    font-size: 1rem;
+    color: #fff;
+}
+
+.key_value_row {
+    display: flex;
+    flex-wrap: wrap; /* Wrap text if it's too long */
+    align-items: flex-start;
+    gap: 10px;
+    animation: slideInFromLeft 0.8s ease;
+}
+
+.key {
+    font-weight: bold;
+    color: #fff; /* Jungle green for keys */
+    flex-basis: 20%; /* Keys take 20% width */
+    animation: slideInFromRight 0.8s ease;
+}
+
+.value {
+    flex-basis: 75%; /* Values take 75% width */
+    color: #fff;
+    word-break: break-word; 
+    animation: slideInFromLeft 0.8s ease;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #005bb5;
+}
+
+.person_name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    animation: slideInFromLeft 0.8s ease;
+}
+
+.short_description {
+    margin: 20px 0;
+    animation: slideInFromRight 0.8s ease;
+}
+
+.values {
+    margin: 20px 0;
+    animation: slideInFromLeft 0.8s ease;
+}
+
+/* Animations */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.default_message {
+    display:flex;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: bold;
+    background-color: #484747;
+    text-align:center;
+    margin-top: 8px;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    opacity: 0.9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.person_avatar {
+    width: 20%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: #666;
+}
+
+.person_content {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    margin-bottom: 20%;
+    animation: fadeIn 0.9s ease-in-out;
+    background-color: #484747;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    20%{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    50%{
+        
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.member_name.active {
+    background-color: #569e60;
+    color: #333;
+    font-weight: bold;
+    border-left: 4px solid #007bff; /* Add a highlight color */
+    padding-left: 8px; /* Adjust padding for left border */
+}
+
+.active {
+    display: block;
+}
+
+@media screen and (min-width:780px) {
+     body {
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
+        background-image: url("../images/about_us/about_us_bg.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100%;
+        animation: none;
+        transition: none;
+    }
+
+    .about_us{
+        color: #fff;
+        font-size: 2rem;
+    }
+    
+    .blur-container{
+        display: flex;
+        flex-direction: column;
+        background-color: #242323;
+        width:100%;
+    }
+
+    .content {
+        display: flex;
+        font-family: 'Arial', sans-serif;
+        color: #333;
+        padding: 0;
+        background-color: #242323;
+        flex-grow: 1;
+        margin: 3%;
+        min-height: 100vh;
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 16px;
+    }
+    
+
+    .sidebar_content {
+        flex-basis: 10%;
+        padding: 8px;
+        margin: 5%;
+        color: #fff;
+        font-size: 1.5rem;
+    }
+    
+    .person_content {
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20%;
+        animation: fadeIn 0.9s ease-in-out;
+        background-color: #484747;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .default_message {
+        display:flex;
+        font-size: 1rem;
+        color: #fff;
+        font-weight: bold;
+        background-color: #484747;
+        text-align:center;
+        padding: 5%;
+        justify-content: center;
+        font-family: 'Courier New', Courier, monospace;
+        opacity: 0.9;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .member_name,
+    .default_message,
+    .info_container{
+        font-size: 1.5rem;
+    }
+    
+    .member_name:hover {
+        transform: scale(1.1);
+        border-color: #666;
+        background-color:#d8611c;
+    }
+    
+
+    .default_message,
+    .info_container{
+        margin-top: 8px;
+    } 
+    
+     
+}
