@@ -80,6 +80,7 @@ function toggleBirds (bird) {
         animalSummary.textContent = `${details.description}`;
         button.style.display = 'inline';
         button.textContent = "Show Details";
+        animalInformation.style.display = 'none';
 
         button.removeEventListener('click', toggleAnimalInformation);
         button.addEventListener('click', toggleAnimalInformation);
