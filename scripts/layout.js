@@ -30,6 +30,7 @@ function openLink(uri) {
 
 document.querySelector(".footer-copyright p").textContent = "Copyright © 2024 SafariPark. All rights reserved.";
 
+
 const headerLogo = document.querySelector(".header img");
 
 headerLogo.src = "../images/index/logo/rb_121824.png";
@@ -37,4 +38,3 @@ headerLogo.alt = "logo image";
 
 
 document.querySelector(".header h2").textContent = "SafariPark"
-
