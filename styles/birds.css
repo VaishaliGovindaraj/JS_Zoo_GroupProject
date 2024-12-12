@@ -44,16 +44,22 @@
     margin-left: 10px;
 }
 
+.bird-item {
+    transition: color 0.3s;
+}
+
+.bird-item.active {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #087904;
+    transform: scale(1.03);
+}
+
 .title-area {
     color: white;
     margin: 24px;
     padding: 24px;
     border-radius: 10px;
     backdrop-filter: blur(10px) brightness(0.5);
-}
-
-.title-area h1 {
-    word-wrap: break-word;
 }
 
 #birds_title {
@@ -108,6 +114,11 @@
         width: 150px;
     }
 
+    #animal-list li {
+        cursor: pointer;
+    }
+
+
     .title-area {
         margin: 52px 16px 52px -46px;
         background-image: url(../images/index/bird1.jpg);
@@ -145,10 +156,6 @@
         justify-content: center;
     }
 
-    #birds_title {
-        font-size: 4rem;
-    }
-
     #animal-summary {
         font-size: 16px;
         padding: 50px;
@@ -160,3 +167,5 @@
         margin: 16px;
     }
 }
+
+

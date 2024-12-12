@@ -1,5 +1,3 @@
-/*const animalList = document.querySelectorAll(`#cassowary, #kookaburra, #cockatoo`); */
-
 const animalDetails = {
     Cassowary: {
         lifespan: "20 years",
@@ -47,7 +45,18 @@ let clickAnimal = null;
 Object.keys(animalDetails).forEach((bird) => {
     const birdList = document.createElement('li');
     birdList.textContent = bird;
-    birdList.addEventListener('click', () => toggleBirds(bird));
+    birdList.classList.add('bird-item');
+
+    birdList.addEventListener('click', () => {
+        if (birdList.classList.contains('active')) {
+            birdList.classList.remove('active');
+        } else {
+            document.querySelectorAll('.bird-item').forEach(item => item.classList.remove('active'));
+            birdList.classList.add('active');
+        }
+
+        toggleBirds(bird);
+    });
     animalList.appendChild(birdList);
 });
 
@@ -87,8 +96,6 @@ function toggleBirds (bird) {
         titleArea.style.backgroundPosition = 'center';
 
         clickAnimal = bird;
-
-
     }
 }
 
@@ -99,98 +106,6 @@ function toggleAnimalInformation() {
     } else {
         animalInformation.style.display = 'none';
         button.textContent = "Show Details"
-
     }
-
-
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-const animalList = document.getElementById("animal-list");
-
-document.getElementById("group-message").textContent = "Discover the unique birds of Australia, from the towering cassowary to the laughing kookaburra and the striking yellow-tailed black cockatoo. Each species has distinct traits, habitats, and behaviors that highlight the diversity of Australia’s wildlife.";
-
-
-function Birds (name, description, lifespan, group, food, length, weight, found, image1, image2, image3) {
-    this.name = name;
-    this.description = description;
-    this.lifespan = lifespan;
-    this.group = group;
-    this.food = food;
-    this.length = length;
-    this.weight = weight;
-    this.found = found;
-    this.image1 = image1;
-    this.image2 = image2;
-    this.image3 = image3;
-};
-
-
-
-let birdCassowary = new Bird (
-    "Cassowary", 
-    "The cassowary is a large flightless bird found in tropical rainforests. Known for its powerful legs and aggressive nature when threatened, it can run at great speeds and is capable of inflicting serious damage.", 
-    "20 years", 
-    "Bird", 
-    "Plants, fruit, insects, small animals", 
-    "1.7m", 
-    "44kg", 
-    "Queensland",
-    "../images/Cassowary.jpg",
-);
-
-let birdKookaburra = new Bird (
-    "Kookaburra", 
-    "The kookaburra is known for its distinct 'laughing' call. It is the largest member of the Kingfisher family and is native to Australia. It preys on small animals, including snakes.", 
-    "20 years", 
-    "Bird", 
-    "Insects, small animals", 
-    "43cm", 
-    "300g", 
-    "Australia wide", 
-    "../images/Kookaburra.jpg"
-);
-
- let birdCockatoo = new Bird (
-    "Yellow Tailed Black Cockatoo", 
-    "A striking bird with a distinctive yellow tail and black plumage. Known for its loud calls, it resides in temperate forests of southeastern Australia.", 
-    "41 years", 
-    "Bird", 
-    "Fruit, seeds, plant material", 
-    "65cm", 
-    "900g", 
-    "SE Australia", 
-    "../images/Yellow-tailedBlackCockatoos.jpg"
- );
-
- let birds = [birdCassowary, birdKookaburra, birdCockatoo];
-
- function findBirdIndexByName (name) {
-    return birds.findIndex(bird => bird.name)
- }
-
- const animalList = document.getElementById("animal-list");
- birds.forEach(bird => {
-    const 
- })
-    
- */
