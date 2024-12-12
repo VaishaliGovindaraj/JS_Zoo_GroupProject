@@ -185,7 +185,7 @@ text-align: justify;
 /* Already included in your CSS */
 
 /* Medium screens (tablets, 768px and below) */
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .content{
     display: flex;
     flex-direction: column;
@@ -342,7 +342,7 @@ text-align: justify;
 }
 
 /* Medium screens (tablets, 768px and below) */
-@media screen and (min-width: 768px) and (max-width: 1058px) {
+@media screen and (min-width: 769px) and (max-width: 1058px) {
 /* welcome message*/
 .welcome_wrapper{
   margin-right: -30%;
