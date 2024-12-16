@@ -32,7 +32,7 @@ document.querySelector(".footer-copyright p").textContent = "Copyright © 2024 S
 
 const headerLogo = document.querySelector(".header img");
 
-if (window.location.pathname === "/index.html") {
+if (window.location.pathname.includes("/index.html")) {
     headerLogo.src = "./images/index/logo/rb_121824.png";
 } else {
     headerLogo.src = "../images/index/logo/rb_121824.png";
