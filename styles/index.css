@@ -64,7 +64,7 @@ text-align: justify;
 
 /* animal details*/
 .animal-container {
-    margin-left: 20%;
+    margin-left: 30%;
     margin-right: -10%;
     height: 100vh;
     width: 100%;
@@ -74,7 +74,12 @@ text-align: justify;
     display: none;
     background-color: #10160f;
     padding: 30px;
-    
+    overflow-y: scroll;
+    scrollbar-width: none; /* For Firefox: Hides scrollbar */
+}
+
+.animal-container::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge: Hides scrollbar */
 }
 
 /* animal details images*/
@@ -180,7 +185,7 @@ text-align: justify;
 /* Already included in your CSS */
 
 /* Medium screens (tablets, 768px and below) */
-@media screen and (max-width: 768px) {
+@media (max-width: 769px) {
   .content{
     display: flex;
     flex-direction: column;
@@ -214,6 +219,12 @@ text-align: justify;
     z-index: 1; /* Ensure slanted videos sit above the background */
     border: 1px solid #ffffff; /* Add a solid white border */
   }
+
+  .description{
+    font-size: 1rem;
+    text-align:left;
+  }
+
   .animal-container {
     margin-left: -10px;
     font-size: 1rem;
@@ -277,11 +288,16 @@ text-align: justify;
 
 
 
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
   .content{
     position: relative;
     display: flex;
     flex-direction: column;
+  }
+
+  .description{
+    font-size: 1rem;
+    text-align:left;
   }
 
   .main-content{
@@ -326,11 +342,18 @@ text-align: justify;
 }
 
 /* Medium screens (tablets, 768px and below) */
-@media screen and (min-width: 768px) and (max-width: 1058px) {
+@media screen and (min-width: 769px) and (max-width: 1058px) {
 /* welcome message*/
 .welcome_wrapper{
   margin-right: -30%;
-  margin-left: 15%;
+  margin-left: 30%;
+  height: 100%;
+  width: 90%;
+}
+
+.welcome_wrapper{
+  margin-right: -30%;
+  margin-left: 40%;
   height: 100%;
   width: 90%;
 }
@@ -338,6 +361,7 @@ text-align: justify;
 .welcome-container {
   display: grid;
   margin-right: -20%;
+  margin-left: 5%;
   height: 100vh;
   width: 90%;
   position: relative;
@@ -358,5 +382,20 @@ text-align: justify;
 .overlay div {
   font-size: 1rem; /* Reduce subtitle size */
 }
+.animal-container {
+  height: 100vh;
+  width: 100%;
+  margin-left: 45%;
+}
 }
 
+@media screen and (min-width: 844px) and (max-width: 1059px) { 
+  .welcome-container {
+    display: grid;
+    margin-right: -10%;
+    margin-left: 5%;
+    height: 100vh;
+    width: 80%;
+    position: relative;
+  }
+}
