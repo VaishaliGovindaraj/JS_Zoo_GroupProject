@@ -5,7 +5,7 @@ Git checkout -b (New branch-name)
 
 
 !!! FROM YOUR NEW BRANCH - ADD YOUR CODE !!!
-Git push setup origin (branch-name)
+Git push --set-upstream origin (branch-name)
 Git add .
 Git commit -m ""
 Git push
