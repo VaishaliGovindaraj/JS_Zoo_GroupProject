@@ -334,11 +334,11 @@ menuItems.forEach(item => {
             descriptionElement.dataset.truncated = "true"; // Track state
         
             // Create and append the toggle button
-            const toggleButton = document.createElement('button');
+            const toggleButton = document.querySelector('.button');
             toggleButton.textContent = "Read More";
             toggleButton.addEventListener('click', () => toggleText(descriptionElement, fullDescription));
         
-            document.querySelector('.animal-description').appendChild(toggleButton);
+           // document.querySelector('.animal-description').appendChild(toggleButton);
 
 
             const selected_animal = document.querySelector('.animal-container')
