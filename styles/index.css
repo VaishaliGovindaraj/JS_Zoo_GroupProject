@@ -61,6 +61,14 @@ font-size: 1.5rem;
 text-align: justify;
 }
 
+.button{
+  background-color: white;
+  color: black;
+}
+
+.button:hover{
+  background-color: #e8874e;
+}
 
 /* animal details*/
 .animal-container {
