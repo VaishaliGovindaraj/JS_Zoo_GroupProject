@@ -1,4 +1,4 @@
-let nameDiv = document.querySelector(".sidebar_content");
+let sideBarDiv = document.querySelector(".sidebar_content");
 
 function teamMembers(name) {
     this.name = name;
@@ -16,15 +16,15 @@ let activeMemberDiv = null; // Track the active member's div
 peopleArray.forEach((member) => {
     let peopleDiv = document.createElement("div");
     peopleDiv.classList.add("members_content");
-    nameDiv.appendChild(peopleDiv);
+    sideBarDiv.appendChild(peopleDiv);
 
-    let membersnameDiv = document.createElement("div");
-    membersnameDiv.textContent = member.name;
-    membersnameDiv.classList.add("member_name");
-    peopleDiv.appendChild(membersnameDiv);
+    let membersNameDiv = document.createElement("div");
+    membersNameDiv.textContent = member.name;
+    membersNameDiv.classList.add("member_name");
+    peopleDiv.appendChild(membersNameDiv);
 
-    membersnameDiv.addEventListener("click", () => {
-        if (activeMemberDiv === membersnameDiv) {
+    membersNameDiv.addEventListener("click", () => {
+        if (activeMemberDiv === membersNameDiv) {
             // If the same member is clicked, toggle the default message
             activeMemberDiv.classList.remove("active");
             activeMemberDiv = null;
@@ -34,8 +34,8 @@ peopleArray.forEach((member) => {
             if (activeMemberDiv) {
                 activeMemberDiv.classList.remove("active"); // Remove the 'active' class from the previously active member
             }
-            membersnameDiv.classList.add("active"); // Add 'active' class to the clicked member
-            activeMemberDiv = membersnameDiv; // Update the active member tracker
+            membersNameDiv.classList.add("active"); // Add 'active' class to the clicked member
+            activeMemberDiv = membersNameDiv; // Update the active member tracker
             displayInfo(member.name);
         }
     });

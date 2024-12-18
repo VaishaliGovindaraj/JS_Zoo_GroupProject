@@ -288,81 +288,84 @@ function truncateText(text, limit = 200) {
     return text.length > limit ? text.slice(0, limit) + "..." : text;
 }
 
-// Function to toggle full text and truncated text
-function toggleText(element, fullText) {
-    const isTruncated = element.dataset.truncated === "true";
+function toggleText(descriptionElement, toggleButton, fullText) {
+  const isTruncated = descriptionElement.dataset.truncated === "true";
 
-    if (isTruncated) {
-        // Show full text
-        element.textContent = fullText;
-        element.nextElementSibling.textContent = "Read Less";
-    } else {
-        // Show truncated text
-        element.textContent = truncateText(fullText);
-        element.nextElementSibling.textContent = "Read More";
-    }
+  if (isTruncated) {
+      // Show full text
+      descriptionElement.textContent = fullText;
+      toggleButton.textContent = "Read Less";
+  } else {
+      // Show truncated text
+      descriptionElement.textContent = truncateText(fullText);
+      toggleButton.textContent = "Read More";
+  }
 
-    element.dataset.truncated = !isTruncated; // Toggle the state
+  descriptionElement.dataset.truncated = (!isTruncated).toString(); // Toggle the state
 }
 
-// JavaScript for highllighting the animal on mouse click / mouse over
+// JavaScript for highlighting the animal on mouse click / mouse over
 const menuItems = document.querySelectorAll('.dropdown-item');
 menuItems.forEach(item => {
-    item.addEventListener('click', function (e) {
-        active_animal_color = rgbToHex(this.style.backgroundColor);
-        active_animal_name = this.textContent;
+  item.addEventListener('click', function () {
+      const activeAnimalColor = rgbToHex(this.style.backgroundColor);
+      const activeAnimalName = this.textContent;
 
-        menuItems.forEach(menu => menu.style.backgroundColor = ''); // resets all animals background color
-        if(active_animal_color != '#d8611c'){
-            this.style.backgroundColor = '#d8611c';  // Set background color on click as orange
+      // Reset all menu items' background colors
+      menuItems.forEach(menu => menu.style.backgroundColor = '');
 
-            const myDiv = document.querySelector('.welcome_wrapper') 
-            myDiv.style.display = 'none'; //hide the welcome message 
+      if (activeAnimalColor !== '#d8611c') {
+          this.style.backgroundColor = '#d8611c'; // Highlight selected animal
 
-            document.querySelector('.animal-name').textContent  = active_animal_name
-            index = findAnimalIndexByName(active_animal_name) //find the clicked animal in the animalArray
-            document.querySelector('.animal-image').src  = animalArray[index]['src']
-            document.querySelector('.animal-food').textContent  = animalArray[index]['food']
+          // Hide the welcome message
+          document.querySelector('.welcome_wrapper').style.display = 'none';
 
-            //document.querySelector('.animal-description').textContent  = truncateText(animalArray[index]['description'])
+          // Update animal details
+          const index = findAnimalIndexByName(activeAnimalName);
+          const animal = animalArray[index];
+          const animalContainer = document.querySelector('.animal-container');
 
-            const descriptionElement = document.querySelector(`.animal-description`);
-            const fullDescription = animalArray[index]['description'];
-        
-            // Set initial truncated text
-            descriptionElement.textContent = truncateText(fullDescription);
-            descriptionElement.dataset.truncated = "true"; // Track state
-        
-            // Create and append the toggle button
-            const toggleButton = document.createElement('button');
-            toggleButton.textContent = "Read More";
-            toggleButton.addEventListener('click', () => toggleText(descriptionElement, fullDescription));
-        
-            document.querySelector('.animal-description').appendChild(toggleButton);
+          // Populate animal details
+          document.querySelector('.animal-name').textContent = animal.name;
+          document.querySelector('.animal-image').src = animal.src;
+          document.querySelector('.animal-food').textContent = animal.food.join(", ");
+          document.querySelector('.animal-group').textContent = animal.group;
+          document.querySelector('.animal-group-link').href = animal.groupLink;
 
+          // Set up the description and toggle button
+          const descriptionElement = document.querySelector('.animal-description');
+          const toggleButton = document.querySelector('.button');
+          const fullDescription = animal.description;
 
-            const selected_animal = document.querySelector('.animal-container')
-            document.querySelector('.animal-group').textContent  = animalArray[index]['group']
-            document.querySelector('.animal-group-link').href  = animalArray[index]['groupLink']
-            selected_animal.style.display = 'block'; // show the animal details
-            if (window.innerWidth <= 768) {// If the screen width is 768px or less (typically mobile size)
-              selected_animal.focus();
-              selected_animal.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        }
-        else{
-            if (window.innerWidth <= 1058) {
-                // If the screen width is 1058 or less (typically mobile size)
-                document.querySelector('.welcome_wrapper').style.display = 'grid'; // show the welcome message on click
+          // Initialize description and button
+          descriptionElement.textContent = truncateText(fullDescription);
+          descriptionElement.dataset.truncated = "true";
+          toggleButton.textContent = "Read More";
 
-            } else {
-                // If the screen width is greater than 768px (typically desktop or larger screen size)
-                document.querySelector('.welcome_wrapper').style.display = 'flex'; // show the welcome message on click
-            }
-            document.querySelector('.animal-container').style.display = 'none'; // hide the animal details
-            this.style.backgroundColor = ''; //remove the highlight color for selected animal
-        }     
+          // Remove existing event listeners safely
+          const newButton = toggleButton.cloneNode(true);
+          toggleButton.replaceWith(newButton);
+
+          // Attach toggle event to the button
+          newButton.addEventListener('click', () => toggleText(descriptionElement, newButton, fullDescription));
+
+          // Show the animal container
+          animalContainer.style.display = 'block';
+
+          if (window.innerWidth <= 768) {
+              animalContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+      } else {
+          // Show welcome message and reset animal details
+          const welcomeWrapper = document.querySelector('.welcome_wrapper');
+          const animalContainer = document.querySelector('.animal-container');
+
+          welcomeWrapper.style.display = window.innerWidth <= 1058 ? 'grid' : 'flex';
+          animalContainer.style.display = 'none';
+          this.style.backgroundColor = ''; // Remove highlight
+      }
   });
+
 
   // Handle mouseover event (triggered when hovering over the animal names)
   item.addEventListener('mouseover', function (e) {
@@ -381,6 +384,7 @@ menuItems.forEach(item => {
     }
     this.style.border = ''; // remove the highlights for the selected animal on mouse out
   });
+
 });
 
 
